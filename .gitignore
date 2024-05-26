@@ -1,0 +1,5 @@
+#dependuncies
+/node_modules
+/dist
+.parcel-cache
+/coverage
