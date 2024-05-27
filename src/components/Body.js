@@ -80,7 +80,7 @@ const Body = () => {
             
           <div x-data="{ slide: 0 }" class="">
             <div className="flex justify-between items-center">
-              <h1 className="text-3xl ml-4">{onYourMindTitle}</h1>
+              <h1 className="text-3xl">{onYourMindTitle}</h1>
               <div className="flex justify-center text-3xl mr-3">
                 <BsArrowLeftCircleFill  className="text-gray-500 transition-all duration-700 hover:scale-125 cursor-pointer"/>
                 <BsArrowRightCircleFill className="ml-4 text-gray-500 transition-all duration-700 hover:scale-125 cursor-pointer" />
@@ -98,12 +98,13 @@ const Body = () => {
               }
             </div>
           </div>
+          <hr className="mb-8" />
 
           {/* Top Chains Restaurent Cards */}
 
           <div x-data="{ slide: 0 }" class="">
             <div className="flex justify-between items-center">
-              <h1 className="text-3xl ml-4">{resRowHeader}</h1>
+              <h1 className="text-3xl">{resRowHeader}</h1>
               <div className="flex justify-center text-3xl mr-3">
                 <BsArrowLeftCircleFill  className="text-gray-500 transition-all duration-700 hover:scale-125 cursor-pointer"/>
                 <BsArrowRightCircleFill className="ml-4 text-gray-500 transition-all duration-700 hover:scale-125 cursor-pointer" />
@@ -122,6 +123,9 @@ const Body = () => {
               }
             </div>
           </div>
+
+          <hr className="mb-8" />
+
         </div>
       </div>
     )
