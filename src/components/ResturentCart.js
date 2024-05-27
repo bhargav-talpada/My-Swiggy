@@ -4,8 +4,9 @@ import { REST_IMG_URL } from "../utils/constants";
 
 const ResturentCart = (props) =>{
     const {resData} = props;
-    // console.log("reddata", resData);
+
     const {cloudinaryImageId, name, cuisines, avgRating, costForTwo, sla, areaName} = resData?.info;
+    
     return(
         <div data-testid="resCard" className=" res-carts m-4 p-4 w-60 h-[415px]  rounded-md transition-all duration-300 hover:scale-95" >
             <img src={REST_IMG_URL+cloudinaryImageId} className=" cart-img rounded-lg w-full h-36" />

@@ -4,7 +4,7 @@ class UserClass extends React.Component {
 
     constructor(props){
         super(props);
-        console.log("Constructor");
+        // console.log("Constructor");
         this.state = {
             userInfo:{
                 name: "dummuy",
