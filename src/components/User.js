@@ -1,4 +1,4 @@
-import useUserData from "../utils/useUserData";
+import useUserData from "../hooks/useUserData";
 
 const User = (props) => {
     const { contact, email} = props;

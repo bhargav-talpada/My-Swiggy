@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import ResturentCart, { promotedLabel } from "./ResturentCart";
 import Shimmer from "./ShimmerUI";
 import { Link } from "react-router-dom";
-import useOnlineStatus from "../utils/useOnlineStatus";
+import useOnlineStatus from "../hooks/useOnlineStatus";
 import { RiWifiOffLine } from "react-icons/ri";
 import UserContext from "../utils/UserContext";
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";

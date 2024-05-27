@@ -1,5 +1,5 @@
 import Shimmer from '../components/ShimmerUI'
-import useResturentMenu from '../utils/useResturentMenu';
+import useResturentMenu from '../hooks/useResturentMenu';
 import { useParams } from 'react-router-dom'
 import { MdStars } from "react-icons/md";
 import RestaurantCategory from './RestaurantCategory';
