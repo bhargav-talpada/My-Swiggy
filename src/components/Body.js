@@ -15,6 +15,8 @@ const Body = () => {
     const [searchText, setSearchText] = useState("");
     const [filterdResturent, setFilterdResturent] = useState([]);
     const [resRowHeader, setResRowHeader] = useState("");
+    const [whatOnYourMindData, setWhatOnYourMindData] = useState([]);
+    const [onYourMindTitle, setOnYourMindTitle] = useState("");
 
     const ResturentCartPromoted = promotedLabel(ResturentCart);
 
@@ -31,6 +33,8 @@ const Body = () => {
       setResturentList(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
       setFilterdResturent(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
       setResRowHeader(json?.data?.cards[1]?.card?.card?.header?.title);
+      setOnYourMindTitle(json?.data?.cards[0]?.card?.card?.header?.title);
+      setWhatOnYourMindData(json?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle);
     }
 
     const onlineStatus = useOnlineStatus();
@@ -75,7 +79,7 @@ const Body = () => {
             
           <div x-data="{ slide: 0 }" class="">
               <div className="flex justify-between items-center">
-                <h1 className="text-3xl ml-4">{resRowHeader}</h1>
+                <h1 className="text-3xl ml-4">{onYourMindTitle}</h1>
                 <div className="flex justify-center text-3xl mr-3">
                   <BsArrowLeftCircleFill  className="text-gray-500 transition-all duration-700 hover:scale-125 cursor-pointer"/>
                   <BsArrowRightCircleFill className="ml-4 text-gray-500 transition-all duration-700 hover:scale-125 cursor-pointer" />
@@ -86,7 +90,7 @@ const Body = () => {
                   filterdResturent.map((resturent) => 
                     <Link to={"/restaurents/" + resturent.info.id} key={resturent.info.id} >
                       {
-                        resturent.info.promoted ? <ResturentCartPromoted resData={resturent} /> : <ResturentCart resData={resturent}  />
+                        <ResturentCart resData={resturent}  />
                       }
                     </Link>
                   )
