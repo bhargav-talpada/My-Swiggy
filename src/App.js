@@ -9,7 +9,7 @@ import PageNotFound from "./components/PageNotFound";
 import ResturentMenu from "./components/ResturentMenu";
 import UserContext from "./utils/UserContext";
 import { Provider } from "react-redux";
-import appStore from "./utils/appStore";
+import appStore from "./redux/appStore";
 import Cart from "./components/Cart";
 
 const Grocery = lazy(() => import("./components/Grocery") );   // lazy loading...

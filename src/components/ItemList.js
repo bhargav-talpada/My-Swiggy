@@ -2,7 +2,7 @@ import { MdStar } from "react-icons/md";
 import { REST_IMG_URL } from "../utils/constants";
 import { FaStopCircle } from "react-icons/fa";
 import { useDispatch } from "react-redux";
-import { addItem } from "../utils/cartSlice";
+import { addItem } from "../redux/cartSlice";
 
 const ItemList = ({items}) => {
 
