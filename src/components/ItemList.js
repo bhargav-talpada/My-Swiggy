@@ -21,9 +21,9 @@ const ItemList = ({items}) => {
                             <span className="my-2">{item.card.info.itemAttribute.vegClassifier == "VEG" ? <FaStopCircle className="text-green-500 text-xl" /> : <FaStopCircle className="text-red-500 text-xl" />}</span>
                             <span className="text-xl">{item.card.info.name}</span>
                             <span className="text-xl">₹{item.card.info.price / 100 || item.card.info.defaultPrice / 100}</span>
-                            <span className="flex items-center"><MdStars className="text-green-400 mr-1 text-xl" />{item.card.info.ratings.aggregatedRating.rating} ({item.card.info.ratings.aggregatedRating.ratingCountV2})</span>
+                            <span className="flex items-center font-semibold"><MdStars className="text-green-400 mr-1 text-2xl" />{item.card.info.ratings.aggregatedRating.rating} ({item.card.info.ratings.aggregatedRating.ratingCountV2})</span>
                         </div>
-                        <p className=" text-gray-500 mb-10">{item.card.info.description}</p>
+                        <p className=" text-gray-500 mb-10 font-semibold">{item.card.info.description}</p>
                     </div>
                     <div className=" mb-10">
                         <div className="absolute">
