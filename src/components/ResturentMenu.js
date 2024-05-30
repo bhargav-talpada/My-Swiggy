@@ -27,11 +27,11 @@ const ResturentMenu = () => {
     return(
         <div className="menu w-full flex justify-center">
             <div className='w-6/12'>
-                <h1 className='font-bold text-4xl mx-3 my-6 '>{name}</h1>
+                <h1 className='font-bold text-4xl ml-4 mt-5 '>{name}</h1>
                 <div className='w12/12 h-60 p-4 bg-gradient-to-t from-gray-300 rounded-[30px]'>
                     <div className='w-12/12 h-52 py-2 px-4 border-2 rounded-2xl bg-white '>
-                        <h3 className='text-2xl flex items-center font-semibold'> <MdStars className='text-green-600 mr-1' /> {avgRating} ({totalRatingsString}) • {costForTwoMessage}</h3>
-                        <p className='text-lg text-red-500 ml-1 font-semibold'>{cuisines.join(", ")}</p> 
+                        <h3 className='text-xl flex items-center font-semibold'> <MdStars className='text-green-600 mr-1' /> {avgRating} ({totalRatingsString}) • {costForTwoMessage}</h3>
+                        <p className='text-base text-red-500 ml-1 font-semibold'>{cuisines.join(", ")}</p> 
                         <div className='pl-5 mt-2'>
                             <p className='text-lg font-semibold'>Outlet<span className=' text-gray-400 ml-4 font-semibold'>{areaName}</span></p>
                             <p className='text-lg font-semibold'>{slaString}</p>

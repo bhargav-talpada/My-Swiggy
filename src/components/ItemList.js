@@ -1,4 +1,4 @@
-import { MdStar } from "react-icons/md";
+import { MdStars } from "react-icons/md";
 import { REST_IMG_URL } from "../utils/constants";
 import { FaStopCircle } from "react-icons/fa";
 import { useDispatch } from "react-redux";
@@ -21,7 +21,7 @@ const ItemList = ({items}) => {
                             <span className="my-2">{item.card.info.itemAttribute.vegClassifier == "VEG" ? <FaStopCircle className="text-green-500 text-xl" /> : <FaStopCircle className="text-red-500 text-xl" />}</span>
                             <span className="text-xl">{item.card.info.name}</span>
                             <span className="text-xl">₹{item.card.info.price / 100 || item.card.info.defaultPrice / 100}</span>
-                            <span className="flex"><MdStar className="text-green-400 mr-1" />{item.card.info.ratings.aggregatedRating.rating} ({item.card.info.ratings.aggregatedRating.ratingCountV2})</span>
+                            <span className="flex items-center"><MdStars className="text-green-400 mr-1 text-xl" />{item.card.info.ratings.aggregatedRating.rating} ({item.card.info.ratings.aggregatedRating.ratingCountV2})</span>
                         </div>
                         <p className=" text-gray-500 mb-10">{item.card.info.description}</p>
                     </div>
