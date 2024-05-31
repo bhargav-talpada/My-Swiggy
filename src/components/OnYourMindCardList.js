@@ -7,7 +7,7 @@ const OnYourMindCardList = ({onYourMindData}) => {
 
   return (
     <div className="my-4">
-        <img src={ONYOURMIND_IMG_URL + imageId} alt={text} className="mx-16 h-40 w-40" />
+        <img src={ONYOURMIND_IMG_URL + imageId} alt={text} className="mx-16 overflow-hidden h-40 w-40" />
     </div>
   )
 }
