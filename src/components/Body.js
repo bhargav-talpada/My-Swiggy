@@ -18,6 +18,7 @@ const Body = () => {
     const [resRowHeader, setResRowHeader] = useState("");
     const [whatOnYourMindData, setWhatOnYourMindData] = useState([]);
     const [onYourMindTitle, setOnYourMindTitle] = useState("");
+    const [currentIndex, setCurrentIndex] = useState(0);
 
     const ResturentCartPromoted = promotedLabel(ResturentCart);
 
@@ -48,6 +49,14 @@ const Body = () => {
       ) 
 
       const {loggedInUser,setUserName} = useContext(UserContext);
+
+      const handleClick = (direction) => {
+        if (direction === 'left') {
+          setCurrentIndex((prevIndex) => (prevIndex - 6 < 0 ? carousel.length - Math.abs(prevIndex - 6) : prevIndex - 6));
+        } else {
+          setCurrentIndex((prevIndex) => (prevIndex + 6 >= carousel.length ? prevIndex + 6 - carousel.length : prevIndex + 6));
+        }
+      };
 
     //Conditional Rendering
     return resturentList.length === 0 ? <Shimmer /> : (
@@ -82,16 +91,18 @@ const Body = () => {
             <div className="flex justify-between items-center">
               <h1 className="text-3xl">{onYourMindTitle}</h1>
               <div className="flex justify-center text-3xl mr-3">
-                <BsArrowLeftCircleFill  className="text-gray-500 transition-all duration-700 hover:scale-125 cursor-pointer"/>
-                <BsArrowRightCircleFill className="ml-4 text-gray-500 transition-all duration-700 hover:scale-125 cursor-pointer" />
+                <BsArrowLeftCircleFill onClick={() => handleClick('left')} className="text-gray-500 transition-all duration-700 hover:scale-125 cursor-pointer"/>
+                <BsArrowRightCircleFill onClick={() => handleClick('right')} className="ml-4 text-gray-500 transition-all duration-700 hover:scale-125 cursor-pointer" />
               </div>
             </div>
             <div className="flex space-x-4 overflow-x-scroll" style={{ scrollbarWidth: 'thin', scrollbarColor: 'transparent transparent' }}>
               { 
-                whatOnYourMindData.map((onYourMind) => 
-                  <Link  key={onYourMind.id} >
+                whatOnYourMindData.map((onYourMind, index) => 
+                  <Link to={"/collections/" + onYourMind.id}  key={onYourMind.id} >
                     {
-                      <OnYourMindCardList onYourMindData={onYourMind}  />
+                      <div style={{ display: index >= currentIndex && index < currentIndex + 6 ? 'block' : 'none' }}>
+                        <OnYourMindCardList onYourMindData={onYourMind}  />
+                      </div>
                     }
                   </Link>
                 )
