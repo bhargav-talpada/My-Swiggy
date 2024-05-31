@@ -26,10 +26,6 @@ const ResturentMenu = () => {
     
     return(
         <div className="menu w-full flex justify-center ">
-            
-            <div className="fixed bottom-0 right-80 bg-black rounded-full h-20 w-20 flex justify-center items-center">
-                    <p className='text-white'>Menu</p>
-            </div>
             <div className='w-6/12'>
                 <h1 className='font-bold text-4xl ml-4 mt-5 '>{name}</h1>
                 <div className='w12/12 h-60 p-4 bg-gradient-to-t from-gray-300 rounded-[30px]'>

@@ -19,7 +19,7 @@ export const Header = () => {
     return(
         <div className="header flex justify-between items-center bg-pink-100 shadow-xl m-2 sm:bg-yellow-100">
             <div className="">
-                <img className="logo w-36" src={LOGO_URL} />
+                <a href="/"><img className="logo w-36" src={LOGO_URL} /></a>
             </div>
             <div className="nav-items">
                 <ul className="flex justify-center items-center p-4 m-4">
