@@ -95,7 +95,7 @@ const Body = () => {
                 <BsArrowRightCircleFill className="ml-4 text-gray-500 transition-all duration-700 hover:scale-125 cursor-pointer" />
               </div>
             </div>
-            <div className="flex space-x-4 overflow-x-scroll" style={{ scrollbarWidth: 'thin', scrollbarColor: 'transparent transparent' }}>
+            <div className="flex overflow-x-scroll" style={{ scrollbarWidth: 'thin', scrollbarColor: 'transparent transparent' }}>
               { 
                 whatOnYourMindData.map((onYourMind, index) => 
                   <Link  key={onYourMind.id} >
@@ -121,7 +121,7 @@ const Body = () => {
                 <BsArrowRightCircleFill className="ml-4 text-gray-500 transition-all duration-700 hover:scale-125 cursor-pointer" />
               </div>
             </div>
-            <div className="flex overflow-x-auto overflow-y-hidden" style={{ scrollbarWidth: 'thin', scrollbarColor: 'transparent transparent' }}>
+            <div className="flex space-x-9 overflow-x-auto overflow-y-hidden" style={{ scrollbarWidth: 'thin', scrollbarColor: 'transparent transparent' }}>
               { 
                 filterdResturent.map((resturent) => 
                   // in Link either you pass /restaurent/id or you can pass link of resturent or you can get link from API...
