@@ -130,6 +130,28 @@ const Body = () => {
 
           <hr className="mb-8" />
 
+          {/* Restaurants with online food delivery in Rajkot */}
+
+          <div class="">
+            <div className="">
+              <h1 className="text-3xl">{resRowHeader}</h1>
+            </div>
+            <div className="" >
+              { 
+                filterdResturent.map((resturent) => 
+                  // in Link either you pass /restaurent/id or you can pass link of resturent or you can get link from API...
+                  <Link to={"/restaurents/" + resturent.info.id} key={resturent.info.id} >  
+                    {
+                      <ResturentCart resData={resturent}  />
+                    }
+                  </Link>
+                )
+              }
+            </div>
+          </div>
+
+          <hr className="mb-8" />
+
         </div>
       </div>
     )
