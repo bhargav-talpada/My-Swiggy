@@ -7,6 +7,7 @@ import { RiWifiOffLine } from "react-icons/ri";
 import UserContext from "../utils/UserContext";
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
 import OnYourMindCardList from "./OnYourMindCardList";
+import OnlineFoodDeliveryCards from "./OnlineFoodDeliveryCards";
 
 
 
@@ -19,6 +20,7 @@ const Body = () => {
     const [whatOnYourMindData, setWhatOnYourMindData] = useState([]);
     const [onYourMindTitle, setOnYourMindTitle] = useState("");
     const [onlineFoodTitle, setOnlineFoodTitle] = useState("");
+    const [onlineFoodData, setOnlineFoodData] = useState([]);
 
     const ResturentCartPromoted = promotedLabel(ResturentCart);
 
@@ -40,6 +42,7 @@ const Body = () => {
       setOnYourMindTitle(json?.data?.cards[0]?.card?.card?.header?.title);
       setWhatOnYourMindData(json?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle?.info);
       setOnlineFoodTitle(json?.data?.cards[2]?.card?.card?.title);
+      setOnlineFoodData(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     }
 
     const onlineStatus = useOnlineStatus();
@@ -140,13 +143,12 @@ const Body = () => {
             <div className="">
               <h1 className="text-3xl">{onlineFoodTitle}</h1>
             </div>
-            <div className="" >
+            <div className="flex flex-wrap space-x-4" >
               { 
-                filterdResturent.map((resturent) => 
-                  // in Link either you pass /restaurent/id or you can pass link of resturent or you can get link from API...
+                onlineFoodData.map((resturent) => 
                   <Link to={"/restaurents/" + resturent.info.id} key={resturent.info.id} >  
                     {
-                      <ResturentCart resData={resturent}  />
+                      <OnlineFoodDeliveryCards resData={resturent}  />
                     }
                   </Link>
                 )
