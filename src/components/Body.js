@@ -12,18 +12,21 @@ import OnYourMindCardList from "./OnYourMindCardList";
 
 const Body = () => {
 
-    const [resturentList, setResturentList] = useState([]);
-    const [searchText, setSearchText] = useState("");
+    const [resturentList, setResturentList] = useState([]);      
     const [filterdResturent, setFilterdResturent] = useState([]);
     const [resRowHeader, setResRowHeader] = useState("");
+    const [searchText, setSearchText] = useState("");
     const [whatOnYourMindData, setWhatOnYourMindData] = useState([]);
     const [onYourMindTitle, setOnYourMindTitle] = useState("");
+    const [onlineFoodTitle, setOnlineFoodTitle] = useState("");
 
     const ResturentCartPromoted = promotedLabel(ResturentCart);
 
     useEffect(()=>{
       fetchData();
-    }, [])
+    }, []);
+
+    // All fetch resturent data
 
     const fetchData = async () => {
       const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.2629975&lng=70.7862588&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
@@ -36,6 +39,7 @@ const Body = () => {
       setResRowHeader(json?.data?.cards[1]?.card?.card?.header?.title);
       setOnYourMindTitle(json?.data?.cards[0]?.card?.card?.header?.title);
       setWhatOnYourMindData(json?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle?.info);
+      setOnlineFoodTitle(json?.data?.cards[2]?.card?.card?.title);
     }
 
     const onlineStatus = useOnlineStatus();
@@ -134,7 +138,7 @@ const Body = () => {
 
           <div class="">
             <div className="">
-              <h1 className="text-3xl">{resRowHeader}</h1>
+              <h1 className="text-3xl">{onlineFoodTitle}</h1>
             </div>
             <div className="" >
               { 
