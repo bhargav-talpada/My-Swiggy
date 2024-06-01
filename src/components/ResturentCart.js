@@ -1,17 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { MdStars } from "react-icons/md";
 import { REST_IMG_URL } from "../utils/constants";
-import useTruncateResTitle from "../hooks/useTruncateResTitle";
 
 const ResturentCart = (props) =>{
+
     const {resData} = props;
+
+    const [truncatedResTitle, setTruncatedResTitle] = useState('');
 
     const {cloudinaryImageId, name, cuisines, avgRating, costForTwo, sla, areaName} = resData?.info;
 
-    const truncatedResTitle = useTruncateResTitle(name);
+
+    useEffect(() => {
+        setTruncatedResTitle(truncate(name, 25)); // Adjust the length as needed
+      }, [name]);
+
+    const truncate = (input, length) => {
+        if (input.length > length) {
+          return input.substring(0, length) + '...';
+        }
+        return input;
+      };
     
     return(
-        <div data-testid="resCard" className=" res-carts mt-8 w-64 h-[415px]  rounded-md transition-all duration-300 hover:scale-95" >
+        <div data-testid="resCard" className=" res-carts mx-4 mt-8 w-64 h-[415px]  rounded-md transition-all duration-300 hover:scale-95" >
             <img src={REST_IMG_URL+cloudinaryImageId} className=" cart-img rounded-xl w-full h-44" />
             <h3 className="font-bold mt-3 ml-3 text-xl">{truncatedResTitle}</h3>
             <h4 className="flex items-center ml-3"><MdStars className="text-2xl text-green-600 mr-1" /> {avgRating} • {sla.slaString}  </h4>

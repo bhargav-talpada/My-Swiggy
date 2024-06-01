@@ -121,7 +121,7 @@ const Body = () => {
                 <BsArrowRightCircleFill className="ml-4 text-gray-500 transition-all duration-700 hover:scale-125 cursor-pointer" />
               </div>
             </div>
-            <div className="flex space-x-4 overflow-x-auto overflow-y-hidden" style={{ scrollbarWidth: 'thin', scrollbarColor: 'transparent transparent' }}>
+            <div className="flex overflow-x-auto overflow-y-hidden" style={{ scrollbarWidth: 'thin', scrollbarColor: 'transparent transparent' }}>
               { 
                 filterdResturent.map((resturent) => 
                   // in Link either you pass /restaurent/id or you can pass link of resturent or you can get link from API...
@@ -143,7 +143,7 @@ const Body = () => {
             <div className="">
               <h1 className="text-3xl">{onlineFoodTitle}</h1>
             </div>
-            <div className="flex flex-wrap space-x-4" >
+            <div className="grid grid-cols-4" >
               { 
                 onlineFoodData.map((resturent) => 
                   <Link to={"/restaurents/" + resturent.info.id} key={resturent.info.id} >  
