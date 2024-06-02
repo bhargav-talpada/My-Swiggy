@@ -153,6 +153,16 @@ const Body = () => {
                   </Link>
                 )
               }
+              { 
+                filterdResturent.map((resturent) => 
+                  // in Link either you pass /restaurent/id or you can pass link of resturent or you can get link from API...
+                  <Link to={"/restaurents/" + resturent.info.id} key={resturent.info.id} >  
+                    {
+                      <ResturentCart resData={resturent}  />
+                    }
+                  </Link>
+                )
+              }
             </div>
           </div>
 
