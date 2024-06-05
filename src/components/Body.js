@@ -9,7 +9,6 @@ import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
 import OnYourMindCardList from "./OnYourMindCardList";
 import OnlineFoodDeliveryCards from "./OnlineFoodDeliveryCards";
 
-off day
 
 const Body = () => {
 
