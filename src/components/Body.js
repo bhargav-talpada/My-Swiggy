@@ -8,7 +8,6 @@ import UserContext from "../utils/UserContext";
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
 import OnYourMindCardList from "./OnYourMindCardList";
 import OnlineFoodDeliveryCards from "./OnlineFoodDeliveryCards";
-off
 
 const Body = () => {
 
