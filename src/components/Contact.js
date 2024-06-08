@@ -1,5 +1,4 @@
-import UserContext from '../utils/UserContext';
-import User from './User'
+
 
 const Contact = () => {
     
@@ -13,7 +12,6 @@ const Contact = () => {
                 <input type='text' className='border border-black m-2 p-2 text-lg' placeholder='Enter Your Message' />
                 <button className='border border-green-500 bg-green-500 rounded-lg m-2 px-5 py-2 text-white text-lg'>Submit</button>
             </form>
-            {/* <User name="Bhargav" location="Rajkot, Gujarat, India" contact="72039 13274" email="bhargavtalpada2004@gmail.com" /> */}
         </div>
     )
 }

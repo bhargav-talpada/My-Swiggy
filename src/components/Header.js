@@ -1,8 +1,7 @@
-import React, { useContext, useState } from "react"
+import React, { useState } from "react"
 import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../hooks/useOnlineStatus";
-// import UserContext from "../utils/UserContext";
 import { FaOpencart } from "react-icons/fa";
 import { useSelector } from "react-redux";
 import { RiDiscountPercentLine } from "react-icons/ri";
@@ -16,8 +15,6 @@ export const Header = () => {
     const [btnName, setBtnName] = useState('Sign In')
     
     const onlineStatus = useOnlineStatus();
-
-    // const {loggedInUser} = useContext(UserContext);
 
     const cartItems = useSelector((store) => store.cart.items)
 
@@ -39,7 +36,6 @@ export const Header = () => {
                     <li className="px-6 text-xl cursor-pointer flex items-center gap-2 hover:text-orange-600"><IoHelpBuoyOutline /><Link to="/contact">Help<sup className="text-orange-600 ml-1">NEW</sup></Link></li>
                     <button onClick={()=>{btnName === 'Sign In' ? setBtnName("Sign Out") : setBtnName("Sign In")}} className="px-6 text-xl hover:text-orange-600 cursor-pointer flex gap-2 items-center"><CiUser />{btnName}</button>
                     <li className="px-6 text-xl cursor-pointer flex items-center gap-2 hover:text-orange-600"><FaOpencart className="text-2xl" /><Link to="/cart">Cart ({cartItems.length})</Link></li>
-                    {/* <li className="px-4 font-bold text-2xl text-blue-600">{loggedInUser}</li> */}
                 </ul>
             </div>
         </div>

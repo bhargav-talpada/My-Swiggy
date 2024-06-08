@@ -1,10 +1,9 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import ResturentCart, { promotedLabel } from "./ResturentCart";
 import Shimmer from "./ShimmerUI";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../hooks/useOnlineStatus";
 import { RiWifiOffLine } from "react-icons/ri";
-import UserContext from "../utils/UserContext";
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
 import OnYourMindCardList from "./OnYourMindCardList";
 import OnlineFoodDeliveryCards from "./OnlineFoodDeliveryCards";
@@ -53,8 +52,6 @@ const Body = () => {
         </div>
       ) 
 
-      const {loggedInUser,setUserName} = useContext(UserContext);
-
       
 
     //Conditional Rendering
@@ -68,11 +65,6 @@ const Body = () => {
                 const searchRestro = resturentList.filter(res => res.info.name.toLowerCase().includes(searchText.toLowerCase()));
                 setFilterdResturent(searchRestro)
               }}>Search</button>
-            </div>
-
-            <div>
-              <label className="text-xl"> UserName :  </label>
-              <input data-testid="userNameInput" className="border border-black p-2" onChange={(e) => setUserName(e.target.value)} value={loggedInUser} />
             </div>
 
             <div>
