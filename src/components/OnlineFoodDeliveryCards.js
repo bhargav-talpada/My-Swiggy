@@ -25,7 +25,7 @@ const OnlineFoodDeliveryCards = (props) => {
 
   return (
     <div>
-        <div data-testid="resCard" className=" res-carts mt-8 mx-4 w-64 h-[415px]  rounded-md transition-all duration-300 hover:scale-95" >
+        <div data-testid="resCard" className=" res-carts mt-8 w-64 h-[415px]  rounded-md" >
             <img src={REST_IMG_URL+cloudinaryImageId} className=" cart-img rounded-xl w-full h-44" />
             <h3 className="font-bold mt-3 ml-4 text-xl">{ truncatedResTitle}</h3>
             <h4 className="flex items-center ml-4 text-lg"><MdStars className="text-2xl text-green-600 mr-1" /> {avgRating} • {sla.slaString}  </h4>

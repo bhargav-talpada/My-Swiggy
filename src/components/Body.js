@@ -56,7 +56,7 @@ const Body = () => {
 
     //Conditional Rendering
     return resturentList.length === 0 ? <Shimmer /> : (
-      <div className="flex justify-center ">
+      <div className="flex justify-center pt-[90px]">
         <div className="body w-9/12">
           <div className="filter flex justify-between items-center">
             <div className="search m-2 p-3">
@@ -78,7 +78,7 @@ const Body = () => {
 
           {/* What's on your mind */}
             
-          <div x-data="{ slide: 0 }" class="">
+          <div class="">
             <div className="flex justify-between items-center">
               <h1 className="text-3xl">{onYourMindTitle}</h1>
               <div className="flex justify-center text-3xl mr-3">
@@ -100,11 +100,11 @@ const Body = () => {
               }
             </div>
           </div>
-          <hr className="mb-8" />
+          <hr className="mb-10" />
 
           {/* Top Chains Restaurent Cards */}
 
-          <div x-data="{ slide: 0 }" class="">
+          <div class="">
             <div className="flex justify-between items-center">
               <h1 className="text-3xl">{resRowHeader}</h1>
               <div className="flex justify-center text-3xl mr-3">
@@ -145,7 +145,7 @@ const Body = () => {
                 )
               }
               { 
-                filterdResturent.map((resturent) => 
+                resturentList.map((resturent) => 
                   // in Link either you pass /restaurent/id or you can pass link of resturent or you can get link from API...
                   <Link to={"/restaurents/" + resturent.info.id} key={resturent.info.id} >  
                     {
