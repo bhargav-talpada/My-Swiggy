@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 
 const BestPlaceEatInCities = ({resData}) => {
 
@@ -6,7 +7,7 @@ const BestPlaceEatInCities = ({resData}) => {
     const [truncatedTitle, setTruncatedTitle] = useState('');
 
     useEffect(() => {
-        setTruncatedTitle(truncate(text, 30)); 
+        setTruncatedTitle(truncate(text, 29)); 
       }, [text]);
 
     const truncate = (input, length) => {
@@ -17,7 +18,7 @@ const BestPlaceEatInCities = ({resData}) => {
       };
 
   return (
-    <div className="mt-8 p-3 w-[17rem] border rounded-lg">
+    <div className="mt-8 p-3 w-[275px] border-2 rounded-xl">
         <h1 className="text-center text-lg font-semibold">{truncatedTitle}</h1>
     </div>
   )

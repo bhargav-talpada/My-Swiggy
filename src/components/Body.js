@@ -8,6 +8,7 @@ import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
 import OnYourMindCardList from "./OnYourMindCardList";
 import OnlineFoodDeliveryCards from "./OnlineFoodDeliveryCards";
 import BestPlaceEatInCities from "./BestPlaceEatInCities";
+import { FaAngleDown } from "react-icons/fa6";
 
 
 const Body = () => {
@@ -22,6 +23,7 @@ const Body = () => {
     const [onlineFoodData, setOnlineFoodData] = useState([]);
     const [bestPlaceEatCities, SetBestPlaceEatCities] = useState([]);
     const [bestPlaceEatTitle, setBestPlaceEatTitle] = useState('');
+    const [showAll, setShowAll] = useState(false);
 
     const ResturentCartPromoted = promotedLabel(ResturentCart);
 
@@ -47,6 +49,10 @@ const Body = () => {
       SetBestPlaceEatCities(json?.data?.cards[6]?.card?.card?.brands);
       setBestPlaceEatTitle(json?.data?.cards[6]?.card?.card?.title)
     }
+
+    const toggleShowAll = () => {
+      setShowAll(!showAll);
+    };
 
     const onlineStatus = useOnlineStatus();
     if(onlineStatus === false)
@@ -168,9 +174,19 @@ const Body = () => {
             <div className="flex justify-between items-center">
               <h1 className="text-3xl">{bestPlaceEatTitle}</h1>
             </div>
-            <div className="grid grid-cols-4">
+            <div className="grid grid-cols-4 ">
               { 
+                showAll 
+                ?
                 bestPlaceEatCities.map((resturent, index) => 
+                  <Link key={index} >  
+                    {
+                       <BestPlaceEatInCities resData={resturent}  />
+                    }
+                  </Link>
+                ) 
+                : 
+                bestPlaceEatCities.slice(0, 11).map((resturent, index) => 
                   <Link key={index} >  
                     {
                        <BestPlaceEatInCities resData={resturent}  />
@@ -178,10 +194,17 @@ const Body = () => {
                   </Link>
                 )
               }
+            
+              { !showAll &&
+                <button onClick={toggleShowAll} className="flex justify-center items-center gap-2 mt-8 p-3 w-[275px] border-2 rounded-xl font-bold text-xl">
+                  Show More <FaAngleDown />
+                </button>
+              }
+
             </div>
           </div>
 
-          <hr className="mb-8" />
+          <hr className="mt-8" />
 
         </div>
       </div>
