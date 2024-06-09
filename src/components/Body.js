@@ -7,6 +7,7 @@ import { RiWifiOffLine } from "react-icons/ri";
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
 import OnYourMindCardList from "./OnYourMindCardList";
 import OnlineFoodDeliveryCards from "./OnlineFoodDeliveryCards";
+import BestPlaceEatInCities from "./BestPlaceEatInCities";
 
 
 const Body = () => {
@@ -19,6 +20,8 @@ const Body = () => {
     const [onYourMindTitle, setOnYourMindTitle] = useState("");
     const [onlineFoodTitle, setOnlineFoodTitle] = useState("");
     const [onlineFoodData, setOnlineFoodData] = useState([]);
+    const [bestPlaceEatCities, SetBestPlaceEatCities] = useState([]);
+    const [bestPlaceEatTitle, setBestPlaceEatTitle] = useState('');
 
     const ResturentCartPromoted = promotedLabel(ResturentCart);
 
@@ -41,6 +44,8 @@ const Body = () => {
       setWhatOnYourMindData(json?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle?.info);
       setOnlineFoodTitle(json?.data?.cards[2]?.card?.card?.title);
       setOnlineFoodData(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+      SetBestPlaceEatCities(json?.data?.cards[6]?.card?.card?.brands);
+      setBestPlaceEatTitle(json?.data?.cards[6]?.card?.card?.title)
     }
 
     const onlineStatus = useOnlineStatus();
@@ -115,7 +120,6 @@ const Body = () => {
             <div className="flex space-x-9 overflow-x-auto overflow-y-hidden" style={{ scrollbarWidth: 'thin', scrollbarColor: 'transparent transparent' }}>
               { 
                 filterdResturent.map((resturent) => 
-                  // in Link either you pass /restaurent/id or you can pass link of resturent or you can get link from API...
                   <Link to={"/restaurents/" + resturent.info.id} key={resturent.info.id} >  
                     {
                       resturent.info.promoted ? <ResturentCartPromoted resData={resturent} /> : <ResturentCart resData={resturent}  />
@@ -146,10 +150,30 @@ const Body = () => {
               }
               { 
                 resturentList.map((resturent) => 
-                  // in Link either you pass /restaurent/id or you can pass link of resturent or you can get link from API...
                   <Link to={"/restaurents/" + resturent.info.id} key={resturent.info.id} >  
                     {
                       <ResturentCart resData={resturent}  />
+                    }
+                  </Link>
+                )
+              }
+            </div>
+          </div>
+
+          <hr className="mb-8" />
+
+          {/* Best Places to Eat Across Cities */}
+
+          <div class="">
+            <div className="flex justify-between items-center">
+              <h1 className="text-3xl">{bestPlaceEatTitle}</h1>
+            </div>
+            <div className="grid grid-cols-4">
+              { 
+                bestPlaceEatCities.map((resturent, index) => 
+                  <Link key={index} >  
+                    {
+                       <BestPlaceEatInCities resData={resturent}  />
                     }
                   </Link>
                 )
