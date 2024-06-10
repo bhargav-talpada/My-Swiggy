@@ -13,7 +13,7 @@ const ResturentCart = (props) =>{
 
 
     useEffect(() => {
-        setTruncatedResTitle(truncate(name, 25)); // Adjust the length as needed
+        setTruncatedResTitle(truncate(name, 25)); 
         setTruncatedResCuisines(truncate(cuisines.join(", "), 30));
       }, [name, cuisines]);
 

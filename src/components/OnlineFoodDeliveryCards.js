@@ -12,7 +12,7 @@ const OnlineFoodDeliveryCards = (props) => {
     const {cloudinaryImageId, name, cuisines, avgRating, costForTwo, sla, areaName} = resData?.info;
 
     useEffect(() => {
-        setTruncatedResTitle(truncate(name, 25)); // Adjust the length as needed
+        setTruncatedResTitle(truncate(name, 25));
         setTruncatedResCuisines(truncate(cuisines.join(", "), 30));
       }, [name,cuisines]);
 
