@@ -10,6 +10,7 @@ import OnlineFoodDeliveryCards from "./OnlineFoodDeliveryCards";
 import BestPlaceEatInCities from "./BestPlaceEatInCities";
 import { FaAngleDown } from "react-icons/fa6";
 import BestCuisinesNear from "./BestCuisinesNear";
+import ResturentNearMe from "./ResturentNearMe";
 
 
 const Body = () => {
@@ -27,6 +28,9 @@ const Body = () => {
     const [showAll, setShowAll] = useState(false);
     const [bestCuisinesNearMe, setBestCuisinesNearMe] = useState([]);
     const [bestCuisinesTitle, setBestCuisinesTitle] = useState('');
+    const [showAllCuisines, setShowAllCuisines] = useState(false);
+    const [resturentNearMe, setResturentNearMe]= useState([]);
+    const [resturentNearMeTitle, setResturentNearMeTitle]= useState('');
 
     const ResturentCartPromoted = promotedLabel(ResturentCart);
 
@@ -53,11 +57,17 @@ const Body = () => {
       setBestPlaceEatTitle(json?.data?.cards[6]?.card?.card?.title)
       setBestCuisinesNearMe(json?.data?.cards[7]?.card?.card?.brands);
       setBestCuisinesTitle(json?.data?.cards[7]?.card?.card?.title)
+      setResturentNearMe(json?.data?.cards[8]?.card?.card?.brands);
+      setResturentNearMeTitle(json?.data?.cards[8]?.card?.card?.title)
     }
 
     const toggleShowAll = () => {
       setShowAll(!showAll);
     };
+
+    const toggleShowAllCuisines = () => {
+      setShowAllCuisines(!showAllCuisines);
+    }
 
     const onlineStatus = useOnlineStatus();
     if(onlineStatus === false)
@@ -104,7 +114,7 @@ const Body = () => {
             </div>
             <div className="flex overflow-x-scroll" style={{ scrollbarWidth: 'thin', scrollbarColor: 'transparent transparent' }}>
               { 
-                whatOnYourMindData.map((onYourMind, index) => 
+                whatOnYourMindData.map((onYourMind) => 
                   <Link  key={onYourMind.id} >
                     {
                       <div >
@@ -218,7 +228,7 @@ const Body = () => {
             </div>
             <div className=" grid grid-cols-4 ">
               { 
-                showAll 
+                showAllCuisines 
                 ?
                 bestCuisinesNearMe.map((resturent, index) => 
                   <Link key={index} >  
@@ -237,8 +247,8 @@ const Body = () => {
                 )
               }
             
-              { !showAll &&
-                <button onClick={toggleShowAll} className="flex justify-center items-center gap-2 mt-8 p-3 w-[275px] border-2 rounded-xl font-bold text-xl">
+              { !showAllCuisines &&
+                <button onClick={toggleShowAllCuisines} className="flex justify-center items-center gap-2 mt-8 p-3 w-[275px] border-2 rounded-xl font-bold text-xl">
                   Show More <FaAngleDown />
                 </button>
               }
@@ -246,6 +256,25 @@ const Body = () => {
             </div>
           </div>
 
+          {/* Explore Every Restaurants Near Me" */}
+
+          <div class="mt-16">
+            <div className="flex justify-between items-center">
+              <h1 className="text-3xl">{resturentNearMeTitle}</h1>
+            </div>
+            <div className="flex gap-3">
+              { 
+                resturentNearMe.map((resturent, index) => 
+                  <Link key={index} >  
+                    {
+                       <ResturentNearMe resData={resturent}  />
+                    }
+                  </Link>
+                ) 
+              }
+
+            </div>
+          </div>
 
         </div>
       </div>
