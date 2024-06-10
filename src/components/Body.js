@@ -9,6 +9,7 @@ import OnYourMindCardList from "./OnYourMindCardList";
 import OnlineFoodDeliveryCards from "./OnlineFoodDeliveryCards";
 import BestPlaceEatInCities from "./BestPlaceEatInCities";
 import { FaAngleDown } from "react-icons/fa6";
+import BestCuisinesNear from "./BestCuisinesNear";
 
 
 const Body = () => {
@@ -24,6 +25,8 @@ const Body = () => {
     const [bestPlaceEatCities, SetBestPlaceEatCities] = useState([]);
     const [bestPlaceEatTitle, setBestPlaceEatTitle] = useState('');
     const [showAll, setShowAll] = useState(false);
+    const [bestCuisinesNearMe, setBestCuisinesNearMe] = useState([]);
+    const [bestCuisinesTitle, setBestCuisinesTitle] = useState('');
 
     const ResturentCartPromoted = promotedLabel(ResturentCart);
 
@@ -48,6 +51,8 @@ const Body = () => {
       setOnlineFoodData(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
       SetBestPlaceEatCities(json?.data?.cards[6]?.card?.card?.brands);
       setBestPlaceEatTitle(json?.data?.cards[6]?.card?.card?.title)
+      setBestCuisinesNearMe(json?.data?.cards[7]?.card?.card?.brands);
+      setBestCuisinesTitle(json?.data?.cards[7]?.card?.card?.title)
     }
 
     const toggleShowAll = () => {
@@ -170,7 +175,7 @@ const Body = () => {
 
           {/* Best Places to Eat Across Cities */}
 
-          <div class="">
+          <div class="mt-16">
             <div className="flex justify-between items-center">
               <h1 className="text-3xl">{bestPlaceEatTitle}</h1>
             </div>
@@ -204,7 +209,43 @@ const Body = () => {
             </div>
           </div>
 
-          <hr className="mt-8" />
+
+          {/* Best Cuisines Near Me */}
+
+          <div class="mt-16">
+            <div className="flex justify-between items-center">
+              <h1 className="text-3xl">{bestCuisinesTitle}</h1>
+            </div>
+            <div className=" grid grid-cols-4 ">
+              { 
+                showAll 
+                ?
+                bestCuisinesNearMe.map((resturent, index) => 
+                  <Link key={index} >  
+                    {
+                       <BestCuisinesNear resData={resturent}  />
+                    }
+                  </Link>
+                ) 
+                : 
+                bestCuisinesNearMe.slice(0, 11).map((resturent, index) => 
+                  <Link key={index} >  
+                    {
+                       <BestCuisinesNear resData={resturent}  />
+                    }
+                  </Link>
+                )
+              }
+            
+              { !showAll &&
+                <button onClick={toggleShowAll} className="flex justify-center items-center gap-2 mt-8 p-3 w-[275px] border-2 rounded-xl font-bold text-xl">
+                  Show More <FaAngleDown />
+                </button>
+              }
+
+            </div>
+          </div>
+
 
         </div>
       </div>
