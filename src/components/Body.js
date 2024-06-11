@@ -89,7 +89,7 @@ const Body = () => {
 
     //Conditional Rendering
     return resturentList.length === 0 ? <Shimmer /> : (
-      <div className="flex justify-center pt-[90px]">
+      <div className="flex flex-col justify-center items-center pt-[90px]">
         <div className="body w-9/12">
           <div className="filter flex justify-between items-center">
             <div className="search m-2 p-3">
@@ -283,18 +283,20 @@ const Body = () => {
             </div>
           </div>
 
-          {/* For better experience,download the Swiggy app now */}
+        </div>
 
-          <div class="flex justify-center items-center">
+        {/* For better experience,download the Swiggy app now */}
+
+        <div class="w-full h-32 flex justify-center items-center gap-20 bg-[#e2e2e7] mt-28">
             <div className="flex justify-between items-center">
-              <h1 className="text-3xl">{downloadAppNowTitle}</h1>
+              <h1 className="text-4xl w-[500px] text-[#02060cbf] font-bold">{downloadAppNowTitle}</h1>
             </div>
-            <div className="flex justify-center items-center">
-              <img src={REST_IMG_URL + downloadAppNow.androidAppImage} />
+            <div className="flex justify-center items-center gap-7">
+              <img src={REST_IMG_URL + downloadAppNow.androidAppImage} className="w-auto h-20" />
+              <img src={REST_IMG_URL + downloadAppNow.iosAppImage} className="w-auto h-20" />
             </div>
           </div>
 
-        </div>
       </div>
     )
 }
