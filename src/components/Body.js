@@ -287,13 +287,17 @@ const Body = () => {
 
         {/* For better experience,download the Swiggy app now */}
 
-        <div class="w-full h-32 flex justify-center items-center gap-20 bg-[#e2e2e7] mt-28">
+        <div class="w-full h-32 flex justify-center items-center gap-20 bg-[#eeeef2] mt-28">
             <div className="flex justify-between items-center">
               <h1 className="text-4xl w-[500px] text-[#02060cbf] font-bold">{downloadAppNowTitle}</h1>
             </div>
             <div className="flex justify-center items-center gap-7">
-              <img src={REST_IMG_URL + downloadAppNow.androidAppImage} className="w-auto h-20" />
-              <img src={REST_IMG_URL + downloadAppNow.iosAppImage} className="w-auto h-20" />
+              <Link to={downloadAppNow.androidAppLink}>
+                <img src={REST_IMG_URL + downloadAppNow.androidAppImage} className="w-auto h-20" />
+              </Link>
+              <Link to={downloadAppNow.iosAppLink}>
+                <img src={REST_IMG_URL + downloadAppNow.iosAppImage} className="w-auto h-20" />
+              </Link>
             </div>
           </div>
 
