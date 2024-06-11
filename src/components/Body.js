@@ -11,6 +11,7 @@ import BestPlaceEatInCities from "./BestPlaceEatInCities";
 import { FaAngleDown } from "react-icons/fa6";
 import BestCuisinesNear from "./BestCuisinesNear";
 import ResturentNearMe from "./ResturentNearMe";
+import { REST_IMG_URL } from "../utils/constants";
 
 
 const Body = () => {
@@ -31,7 +32,10 @@ const Body = () => {
     const [showAllCuisines, setShowAllCuisines] = useState(false);
     const [resturentNearMe, setResturentNearMe]= useState([]);
     const [resturentNearMeTitle, setResturentNearMeTitle]= useState('');
+    const [downloadAppNow, setDownloadAppNow] = useState([]);
+    const [downloadAppNowTitle, setDownloadAppNowTitle] = useState('');
 
+    
     const ResturentCartPromoted = promotedLabel(ResturentCart);
 
     useEffect(()=>{
@@ -58,8 +62,11 @@ const Body = () => {
       setBestCuisinesNearMe(json?.data?.cards[7]?.card?.card?.brands);
       setBestCuisinesTitle(json?.data?.cards[7]?.card?.card?.title)
       setResturentNearMe(json?.data?.cards[8]?.card?.card?.brands);
-      setResturentNearMeTitle(json?.data?.cards[8]?.card?.card?.title)
-    }
+      setResturentNearMeTitle(json?.data?.cards[8]?.card?.card?.title);
+      setDownloadAppNowTitle(json?.data?.cards[9]?.card?.card?.title);
+      setDownloadAppNow(json?.data?.cards[9]?.card?.card);
+
+    };
 
     const toggleShowAll = () => {
       setShowAll(!showAll);
@@ -256,7 +263,7 @@ const Body = () => {
             </div>
           </div>
 
-          {/* Explore Every Restaurants Near Me" */}
+          {/* Explore Every Restaurants Near Me */}
 
           <div class="mt-16">
             <div className="flex justify-between items-center">
@@ -273,6 +280,17 @@ const Body = () => {
                 ) 
               }
 
+            </div>
+          </div>
+
+          {/* For better experience,download the Swiggy app now */}
+
+          <div class="flex justify-center items-center">
+            <div className="flex justify-between items-center">
+              <h1 className="text-3xl">{downloadAppNowTitle}</h1>
+            </div>
+            <div className="flex justify-center items-center">
+              <img src={REST_IMG_URL + downloadAppNow.androidAppImage} />
             </div>
           </div>
 
