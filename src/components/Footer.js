@@ -37,7 +37,7 @@ const Footer = () => {
           <div>
             <h1 className="text-[#ffffffeb] text-2xl font-black">We deliver to:</h1>
             <h1 className="text-[#ffffff99] text-xl font-semibold my-2">Banglore</h1>
-            <h1 className="text-[#ffffff99] text-xl font-semibold my-2">Gutrgaon</h1>
+            <h1 className="text-[#ffffff99] text-xl font-semibold my-2">Gurgaon</h1>
             <h1 className="text-[#ffffff99] text-xl font-semibold my-2">Hydrabad</h1>
             <h1 className="text-[#ffffff99] text-xl font-semibold my-2">Delhi</h1>
           </div>
