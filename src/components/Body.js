@@ -12,6 +12,7 @@ import { FaAngleDown } from "react-icons/fa6";
 import BestCuisinesNear from "./BestCuisinesNear";
 import ResturentNearMe from "./ResturentNearMe";
 import { REST_IMG_URL } from "../utils/constants";
+import Footer from "./Footer";
 
 
 const Body = () => {
@@ -300,6 +301,8 @@ const Body = () => {
               </Link>
             </div>
           </div>
+
+          <Footer />
 
       </div>
     )
