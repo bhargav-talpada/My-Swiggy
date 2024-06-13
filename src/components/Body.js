@@ -11,7 +11,7 @@ import BestPlaceEatInCities from "./BestPlaceEatInCities";
 import { FaAngleDown } from "react-icons/fa6";
 import BestCuisinesNear from "./BestCuisinesNear";
 import ResturentNearMe from "./ResturentNearMe";
-import { REST_IMG_URL } from "../utils/constants";
+import { REST_IMG_URL, SWIGGY_MAIN_API } from "../utils/constants";
 import Footer from "./Footer";
 
 
@@ -46,7 +46,7 @@ const Body = () => {
     // All fetch resturent data
 
     const fetchData = async () => {
-      const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.2629975&lng=70.7862588&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+      const data = await fetch(SWIGGY_MAIN_API);
       const json = await data.json();
       console.log("all data",json);
 

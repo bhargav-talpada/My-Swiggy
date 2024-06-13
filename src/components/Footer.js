@@ -1,7 +1,23 @@
 import { SiSwiggy } from "react-icons/si";
 import { FaRegCopyright } from "react-icons/fa";
+import { SWIGGY_MAIN_API } from "../utils/constants";
+import { useEffect, useState } from "react";
 
 const Footer = () => {
+
+  const [footerCityData, setFooterCityData] = useState([]);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    const data = await fetch(SWIGGY_MAIN_API);
+    const json = await data.json();
+    console.log(json);
+    // setFooterCityData(json?.data);
+  }
+
   return (
     <div className="w-full h-[550px] bg-[#02060C] flex justify-center items-center">
       <div className="w-8/12">
