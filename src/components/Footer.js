@@ -27,7 +27,7 @@
     return (
       <div className="w-full h-auto bg-[#02060C] flex-col justify-center items-center">
         <div className="flex justify-center items-center">
-          <div className="w-8/12 my-14">
+          <div className="w-8/12 my-20">
             <div className="w-full flex justify-around">
               <div>
                 <h1 className="flex items-center text-[#ffffffeb] gap-1 text-3xl font-bold"><SiSwiggy className="text-[#ffffffeb] text-4xl" /> Swiggy </h1>
