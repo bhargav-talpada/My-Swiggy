@@ -15,7 +15,7 @@ import { REST_IMG_URL, SWIGGY_MAIN_API } from "../utils/constants";
 import Footer from "./Footer";
 
 off day
-off off
+off off off
 
 const Body = () => {
 
