@@ -29,9 +29,9 @@
         <div className="flex justify-center items-center">
           <div className="w-8/12 my-20">
             <div className="w-full flex justify-around">
-              <div>
+              <div className="flex flex-col gap-2">
                 <h1 className="flex items-center text-[#ffffffeb] gap-1 text-3xl font-bold"><SiSwiggy className="text-[#ffffffeb] text-4xl" /> Swiggy </h1>
-                <p className="text-[#ffffff99] flex items-center gap-1 font-semibold text-xl"> <FaRegCopyright /> 2024 Bhargav Talpada </p>
+                <p className="text-[#ffffff99] flex items-center gap-1 font-semibold text-xl ml-2"> <FaRegCopyright className="text-sm" /> 2024 Bhargav Talpada </p>
               </div>
               <div>
                 <h1 className="text-[#ffffffeb] text-2xl font-black">Company</h1>
