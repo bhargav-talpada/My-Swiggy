@@ -118,13 +118,12 @@ const Body = () => {
             
           <div class="">
             <div className="flex justify-between items-center">
-              <h1 className="text-3xl">{onYourMindTitle}</h1>
+              {/* <h1 className="text-3xl">{onYourMindTitle}</h1> */}
               <div className="flex justify-center text-3xl mr-3">
-                <BsArrowLeftCircleFill className="text-gray-500 transition-all duration-700 hover:scale-125 cursor-pointer"/>
-                <BsArrowRightCircleFill className="ml-4 text-gray-500 transition-all duration-700 hover:scale-125 cursor-pointer" />
+              
               </div>
             </div>
-            <div className="flex overflow-x-scroll" style={{ scrollbarWidth: 'thin', scrollbarColor: 'transparent transparent' }}>
+            <div className="flex space-x-9 overflow-x-scroll scroll-smooth" ref={scrollRef} style={{ scrollbarWidth: 'thin', scrollbarColor: 'transparent transparent' }}>
               { 
                 whatOnYourMindData.map((onYourMind) => 
                   <Link  key={onYourMind.id} >
@@ -143,8 +142,8 @@ const Body = () => {
           {/* Top Chains Restaurent Cards */}
 
           <div class="">
-            <div className="flex justify-between items-center relative">
-              <h1 className="text-3xl">{resRowHeader}</h1>
+            <div className="flex justify-between items-center">
+              <h1 className="text-3xl relative">{resRowHeader}</h1>
               <div className="flex justify-center text-3xl mr-3">
                 <BsArrowLeftCircleFill onClick={() => scroll(-500)} className="text-gray-500 transition-all duration-700 hover:scale-125 cursor-pointer"/>
                 <BsArrowRightCircleFill onClick={() => scroll(500)} className="ml-4 text-gray-500 transition-all duration-700 hover:scale-125 cursor-pointer" />
