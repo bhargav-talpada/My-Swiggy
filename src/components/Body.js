@@ -118,12 +118,12 @@ const Body = () => {
             
           <div class="">
             <div className="flex justify-between items-center">
-              {/* <h1 className="text-3xl">{onYourMindTitle}</h1> */}
+              <h1 className="text-3xl">{onYourMindTitle}</h1>
               <div className="flex justify-center text-3xl mr-3">
               
               </div>
             </div>
-            <div className="flex space-x-9 overflow-x-scroll scroll-smooth" ref={scrollRef} style={{ scrollbarWidth: 'thin', scrollbarColor: 'transparent transparent' }}>
+            <div className="flex space-x-9 overflow-x-scroll scroll-smooth" style={{ scrollbarWidth: 'thin', scrollbarColor: 'transparent transparent' }}>
               { 
                 whatOnYourMindData.map((onYourMind) => 
                   <Link  key={onYourMind.id} >
@@ -149,7 +149,7 @@ const Body = () => {
                 <BsArrowRightCircleFill onClick={() => scroll(500)} className="ml-4 text-gray-500 transition-all duration-700 hover:scale-125 cursor-pointer" />
               </div>
             </div>
-            <div className="flex space-x-9 overflow-x-auto overflow-y-hidden scroll-smooth" ref={scrollRef} style={{ scrollbarWidth: 'thin', scrollbarColor: 'transparent transparent' }}>
+            <div className="flex space-x-9 overflow-x-auto overflow-y-hidden scroll-smooth" style={{ scrollbarWidth: 'thin', scrollbarColor: 'transparent transparent' }}>
               { 
                 filterdResturent.map((resturent) => 
                   <Link to={"/restaurents/" + resturent.info.id} key={resturent.info.id} >  
