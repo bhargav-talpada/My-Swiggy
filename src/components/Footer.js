@@ -60,8 +60,8 @@
               <div>
                 <h1 className="text-[#ffffffeb] text-2xl font-black">We deliver to:</h1>
                 { 
-                  footerCityData.slice(0,6).map((cities) => 
-                    <FooterCityData key={cities.id} citiesData={cities}  />
+                  footerCityData.slice(0,6).map((cities, index) => 
+                    <FooterCityData key={index} citiesData={cities}  />
                   )
                 }
 

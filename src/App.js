@@ -15,15 +15,6 @@ import OnYourMindMenuInfo from "./components/OnYourMindMenuInfo";
 
 const App = () => {
 
-    const [userName, setUserName] = useState();
-
-    useEffect(() => {
-        const data = {
-            name : "Bhargav",
-        };
-        setUserName(data.name);
-    }, [])
-
     return(
         <Provider store={appStore}>
                 <div>
