@@ -120,10 +120,11 @@ const Body = () => {
             <div className="flex justify-between items-center">
               <h1 className="text-3xl">{onYourMindTitle}</h1>
               <div className="flex justify-center text-3xl mr-3">
-              
+              <BsArrowLeftCircleFill onClick={() => scroll(-300)} className="text-gray-500 transition-all duration-700 hover:scale-125 cursor-pointer"/>
+              <BsArrowRightCircleFill onClick={() => scroll(300)} className="ml-4 text-gray-500 transition-all duration-700 hover:scale-125 cursor-pointer" />
               </div>
             </div>
-            <div className="flex space-x-9 overflow-x-scroll scroll-smooth" style={{ scrollbarWidth: 'thin', scrollbarColor: 'transparent transparent' }}>
+            <div className="flex space-x-9 overflow-x-scroll scroll-smooth" ref={scrollRef} style={{ scrollbarWidth: 'thin', scrollbarColor: 'transparent transparent' }}>
               { 
                 whatOnYourMindData.map((onYourMind) => 
                   <Link  key={onYourMind.id} >
