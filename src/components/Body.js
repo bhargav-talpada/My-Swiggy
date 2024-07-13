@@ -14,7 +14,7 @@ import ResturentNearMe from "./ResturentNearMe";
 import { REST_IMG_URL, SWIGGY_MAIN_API } from "../utils/constants";
 import Footer from "./Footer";
 
-off day   
+off day   off
 
 const Body = () => {
 
