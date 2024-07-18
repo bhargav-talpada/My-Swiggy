@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom'
 import { MdStars } from "react-icons/md";
 import RestaurantCategory from './RestaurantCategory';
 import { IoIosBicycle } from "react-icons/io";
+import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from 'react-icons/bs';
 
 const ResturentMenu = () => {
 
@@ -17,7 +18,9 @@ const ResturentMenu = () => {
     const { slaString } = sla;
     const { message } = feeDetails;
 
-    const {itemCards} = resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
+    const deals = resInfo?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.offers;
+
+    // const {itemCards} = resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
 
     const categories = resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
         c => c.card?.["card"]?.["@type"] == "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
@@ -38,6 +41,15 @@ const ResturentMenu = () => {
                         </div>
                         <hr className='my-4' />
                         <p className='text-lg font-semibold mr-4 flex items-center'> <IoIosBicycle className='mr-2' /> {message}</p>
+                    </div>
+                </div>
+                <div className='py-3'>
+                    <div className='flex justify-between items-center'>
+                        <h1 className='font-bold text-3xl ml-4 mt-5 '>Deals for you</h1>
+                        <div className="flex justify-center text-3xl mr-3">
+                            <BsArrowLeftCircleFill  className="text-gray-500 transition-all duration-700 hover:scale-125 cursor-pointer"/>
+                            <BsArrowRightCircleFill className="ml-4 text-gray-500 transition-all duration-700 hover:scale-125 cursor-pointer" />
+                        </div>
                     </div>
                 </div>
                 {/* Categories accordians */}
