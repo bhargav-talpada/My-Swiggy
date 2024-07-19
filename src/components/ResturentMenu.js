@@ -32,7 +32,7 @@ const ResturentMenu = () => {
         <div className="menu w-full flex justify-center pt-[90px]">
             <div className='w-6/12'>
                 <h1 className='font-bold text-4xl ml-4 mt-5 '>{name}</h1>
-                <div className='w12/12 h-60 p-4 bg-gradient-to-t from-gray-300 rounded-[30px]'>
+                <div className=' h-60 p-4 bg-gradient-to-t from-gray-300 rounded-[30px]'>
                     <div className='w-12/12 h-52 py-2 px-4 border-2 rounded-2xl bg-white '>
                         <h3 className='text-xl flex items-center font-semibold'> <MdStars className='text-green-600 mr-1' /> {avgRating} ({totalRatingsString}) • {costForTwoMessage}</h3>
                         <p className='text-base text-red-500 ml-1 font-semibold'>{cuisines.join(", ")}</p> 
@@ -53,10 +53,10 @@ const ResturentMenu = () => {
                             <BsArrowRightCircleFill className="ml-4 text-gray-500 transition-all duration-700 hover:scale-125 cursor-pointer" />
                         </div>
                     </div>
-                    <div className=''>
+                    <div className='flex space-x-4 overflow-x-auto overflow-y-hidden scroll-smooth p-5' style={{ scrollbarWidth: 'thin', scrollbarColor: 'transparent transparent' }}>
                         {
                             deals.map((offer) => 
-                                <DealsForYou key={offer.info.Ids} dealsInfo={offer} />
+                                <DealsForYou key={offer.info.Ids} dealDetails={offer} />
                             )
                         }
                     </div>

@@ -1,11 +1,13 @@
-const DealsForYou = (dealsInfo) => {
+const DealsForYou = (dealDetails) => {
 
-    console.log("offer Data", dealsInfo);
+    console.log("offer Data", dealDetails);
+
 
     return(
-        <div className="flex flex-row items-center gap-2">
-            <div className="border w-96 h-20">
-
+        <div className="">
+            <div className="border border-[#02060c26] rounded-3xl w-80 h-20">
+                {/* <h1>{description}</h1>
+                <h1>{header}</h1> */}
             </div>
         </div>
     )
