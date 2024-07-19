@@ -55,8 +55,8 @@ const ResturentMenu = () => {
                     </div>
                     <div className=''>
                         {
-                            deals.map((offer, index) => 
-                                <DealsForYou key={index} dealsInfo={offer} />
+                            deals.map((offer) => 
+                                <DealsForYou key={offer.info.Ids} dealsInfo={offer} />
                             )
                         }
                     </div>
