@@ -19,7 +19,7 @@ const ResturentMenu = () => {
     const { slaString } = sla;
     const { message } = feeDetails;
 
-    const deals = resInfo?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.offers;
+    // const deals = resInfo?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.offers;
 
     // const {itemCards} = resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
 
@@ -45,7 +45,7 @@ const ResturentMenu = () => {
                     </div>
                 </div>
                 {/* Deals For you section */}
-                <div className='py-3'>
+                {/* <div className='py-3'>
                     <div className='flex justify-between items-center'>
                         <h1 className='font-bold text-3xl ml-4 mt-5 '>Deals for you</h1>
                         <div className="flex justify-center text-3xl mr-3">
@@ -60,7 +60,7 @@ const ResturentMenu = () => {
                             )
                         }
                     </div>
-                </div>
+                </div> */}
                 {/* Categories accordians */}
                 <div className='mt-12'>
                     {

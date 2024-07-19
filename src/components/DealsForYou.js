@@ -2,6 +2,8 @@ const DealsForYou = (dealDetails) => {
 
     console.log("offer Data", dealDetails);
 
+    const { description, header } = dealDetails.info;
+    console.log(description);
 
     return(
         <div className="">
