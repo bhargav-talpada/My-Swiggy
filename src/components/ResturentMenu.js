@@ -5,6 +5,7 @@ import { MdStars } from "react-icons/md";
 import RestaurantCategory from './RestaurantCategory';
 import { IoIosBicycle } from "react-icons/io";
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from 'react-icons/bs';
+import DealsForYou from './DealsForYou';
 
 const ResturentMenu = () => {
 
@@ -43,6 +44,7 @@ const ResturentMenu = () => {
                         <p className='text-lg font-semibold mr-4 flex items-center'> <IoIosBicycle className='mr-2' /> {message}</p>
                     </div>
                 </div>
+                {/* Deals For you section */}
                 <div className='py-3'>
                     <div className='flex justify-between items-center'>
                         <h1 className='font-bold text-3xl ml-4 mt-5 '>Deals for you</h1>
@@ -50,6 +52,13 @@ const ResturentMenu = () => {
                             <BsArrowLeftCircleFill  className="text-gray-500 transition-all duration-700 hover:scale-125 cursor-pointer"/>
                             <BsArrowRightCircleFill className="ml-4 text-gray-500 transition-all duration-700 hover:scale-125 cursor-pointer" />
                         </div>
+                    </div>
+                    <div className=''>
+                        {
+                            deals.map((offer, index) => 
+                                <DealsForYou key={index} dealsInfo={offer} />
+                            )
+                        }
                     </div>
                 </div>
                 {/* Categories accordians */}
