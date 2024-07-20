@@ -8,7 +8,7 @@ import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from 'react-icons/bs';
 import DealsForYou from './DealsForYou';
 
 const ResturentMenu = () => {
-
+off
     const {resId} = useParams();
 
     const resInfo = useResturentMenu(resId);
