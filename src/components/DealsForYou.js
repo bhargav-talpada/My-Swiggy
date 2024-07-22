@@ -1,9 +1,10 @@
 const DealsForYou = (dealDetails) => {
 
     console.log("offer Data", dealDetails);
+    console.log(dealDetails);
 
-    const { description, header } = dealDetails.info;
-    console.log(description);
+    // const { description, header } = dealDetails?.info;
+    console.log(dealDetails.info);
 
     return(
         <div className="">
