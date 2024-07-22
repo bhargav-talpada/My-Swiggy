@@ -4,7 +4,7 @@ const DealsForYou = (dealDetails) => {
     console.log(dealDetails);
 
     // const { description, header } = dealDetails?.info;
-    console.log(dealDetails.info);
+    // console.log(description);
 
     return(
         <div className="">
