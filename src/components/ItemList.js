@@ -1,15 +1,23 @@
 import { MdStars } from "react-icons/md";
 import { REST_IMG_URL } from "../utils/constants";
 import { FaStopCircle } from "react-icons/fa";
-import { useDispatch } from "react-redux";
-import { addItem } from "../redux/cartSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { addItem, clearCart } from "../redux/cartSlice";
+import { MdDelete } from "react-icons/md";
+
 
 const ItemList = ({items}) => {
+
+    const cartItems = useSelector((store) => store.cart.items);
 
     const dispatch = useDispatch();
 
     const handleAddItem = (item) => {
         dispatch(addItem(item))                                                                                                                                                                                                                                                                            
+    }
+
+    const handleClearcart = () => {
+        dispatch(clearCart())
     }
 
     return(
@@ -31,6 +39,7 @@ const ItemList = ({items}) => {
                         </div>
                         <img src={REST_IMG_URL + item.card.info.imageId} className="w-40 h-36 rounded-xl" alt="Customizable" />
                     </div>
+                    { cartItems.length != 0 && <MdDelete className="mt-52 text-xl text-red-600 cursor-pointer" onClick={handleClearcart} />}
                 </div>
                 
             )}
