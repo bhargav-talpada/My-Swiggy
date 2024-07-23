@@ -121,7 +121,7 @@ const Body = () => {
 
           {/* What's on your mind */}
             
-          <div class="">
+          <div className="">
             <div className="flex justify-between items-center">
               <h1 className="text-3xl">{onYourMindTitle}</h1>
               <div className="flex justify-center text-3xl mr-3">
@@ -147,7 +147,7 @@ const Body = () => {
 
           {/* Top Chains Restaurent Cards */}
 
-          <div class="">
+          <div className="">
             <div className="flex justify-between items-center">
               <h1 className="text-3xl">{resRowHeader}</h1>
               <div className="flex justify-center text-3xl mr-3">
@@ -172,7 +172,7 @@ const Body = () => {
 
           {/* Restaurants with online food delivery in Rajkot */}
 
-          <div class="">
+          <div className="">
             <div className="">
               <h1 className="text-3xl">{onlineFoodTitle}</h1>
             </div>
@@ -202,7 +202,7 @@ const Body = () => {
 
           {/* Best Places to Eat Across Cities */}
 
-          <div class="mt-16">
+          <div className="mt-16">
             <div className="flex justify-between items-center">
               <h1 className="text-3xl">{bestPlaceEatTitle}</h1>
             </div>
@@ -239,7 +239,7 @@ const Body = () => {
 
           {/* Best Cuisines Near Me */}
 
-          <div class="mt-16">
+          <div className="mt-16">
             <div className="flex justify-between items-center">
               <h1 className="text-3xl">{bestCuisinesTitle}</h1>
             </div>
@@ -275,7 +275,7 @@ const Body = () => {
 
           {/* Explore Every Restaurants Near Me */}
 
-          <div class="mt-16">
+          <div className="mt-16">
             <div className="flex justify-between items-center">
               <h1 className="text-3xl">{resturentNearMeTitle}</h1>
             </div>
@@ -297,7 +297,7 @@ const Body = () => {
 
         {/* For better experience,download the Swiggy app now */}
 
-        <div class="w-full h-32 flex justify-center items-center gap-20 bg-[#eeeef2] mt-28">
+        <div className="w-full h-32 flex justify-center items-center gap-20 bg-[#eeeef2] mt-28">
             <div className="flex justify-between items-center">
               <h1 className="text-4xl w-[500px] text-[#02060cbf] font-bold">{downloadAppNowTitle}</h1>
             </div>

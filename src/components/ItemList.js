@@ -4,13 +4,12 @@ import { FaStopCircle } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { addItem, clearCart } from "../redux/cartSlice";
 import { MdDelete } from "react-icons/md";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 
 const ItemList = ({items}) => {
 
-    const [itemsID, setItemsID] = useState([]);
-    const [cartItem, setCartItem] = useState([]);
+    const [itemsIDs, setItemsIDs] = useState([])
 
     const cartItems = useSelector((store) => store.cart.items);
 
@@ -20,31 +19,18 @@ const ItemList = ({items}) => {
         dispatch(addItem(item))                                                                                                                                                                                                                                                                            
     }
 
-    console.log("items", cartItems);
+    console.log("items", cartItems); 
     // console.log("items", items[5]?.card?.info?.id);
-    if (cartItems.length != 0) {
-        
-        if (cartItems.length === 0) {
-            const itemId = cartItems[0]?.card?.info?.id;
-            setItemsID(itemId)
-        } else {
-            for (let index = 0; index < cartItems.length; index++) {
-                const itemId = cartItems[index]?.card?.info?.id;
-                // console.log(itemId);
-                setItemsID(itemId);
-            }
-        }
-    }  
-    console.log(itemsID);
 
-    // const handleDeleteItem = (itemsID) => {
-    //     setCartItem(cartItem)
+    useEffect(() => {
+        console.log(cartItems.length);
+        setItemsIDs(cartItems.map((itemsid) => itemsid.card.info.id));
+        console.log("items id",itemsIDs);
+    }, [])
+
+    // const handleClearcart = () => {
+    //     dispatch(clearCart())
     // }
-
-
-    const handleClearcart = () => {
-        dispatch(clearCart())
-    }
 
     return(
         <div className="">
@@ -65,7 +51,7 @@ const ItemList = ({items}) => {
                         </div>
                         <img src={REST_IMG_URL + item.card.info.imageId} className="w-40 h-36 rounded-xl" alt="Customizable" />
                     </div>
-                    { cartItems.length != 0 && <MdDelete className="mt-52 text-xl text-red-600 cursor-pointer" onClick={handleClearcart} />}
+                    {/* { cartItems.length != 0 && <MdDelete className="mt-52 text-xl text-red-600 cursor-pointer" onClick={handleClearcart} />} */}
                 </div>
                 
             )}
