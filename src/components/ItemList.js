@@ -20,13 +20,12 @@ const ItemList = ({items}) => {
     }
 
     console.log("items", cartItems); 
-    // console.log("items", items[5]?.card?.info?.id);
 
-    useEffect(() => {
-        console.log(cartItems.length);
-        setItemsIDs(cartItems.map((itemsid) => itemsid.card.info.id));
-        console.log("items id",itemsIDs);
-    }, [])
+    // useEffect(() => {
+    //     console.log(cartItems.length);
+    //     setItemsIDs(cartItems.map((itemsid) => itemsid.card.info.id));
+    //     console.log("items id",itemsIDs);
+    // }, []);
 
     // const handleClearcart = () => {
     //     dispatch(clearCart())
