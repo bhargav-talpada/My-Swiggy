@@ -22,11 +22,20 @@ const ItemList = ({items}) => {
 
     console.log("items", cartItems);
     // console.log("items", items[5]?.card?.info?.id);
-    for (let index = 0; index < items.length; index++) {
-        const itemId = items[index]?.card?.info?.id;
-        console.log(itemId);
-        setItemsID(itemId);        
-    }
+    if (cartItems.length != 0) {
+        
+        if (cartItems.length === 0) {
+            const itemId = cartItems[0]?.card?.info?.id;
+            setItemsID(itemId)
+        } else {
+            for (let index = 0; index < cartItems.length; index++) {
+                const itemId = cartItems[index]?.card?.info?.id;
+                // console.log(itemId);
+                setItemsID(itemId);
+            }
+        }
+    }  
+    console.log(itemsID);
 
     // const handleDeleteItem = (itemsID) => {
     //     setCartItem(cartItem)
