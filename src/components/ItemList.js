@@ -4,9 +4,13 @@ import { FaStopCircle } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { addItem, clearCart } from "../redux/cartSlice";
 import { MdDelete } from "react-icons/md";
+import { useState } from "react";
 
 
 const ItemList = ({items}) => {
+
+    const [itemsID, setItemsID] = useState([]);
+    const [cartItem, setCartItem] = useState([]);
 
     const cartItems = useSelector((store) => store.cart.items);
 
@@ -15,6 +19,19 @@ const ItemList = ({items}) => {
     const handleAddItem = (item) => {
         dispatch(addItem(item))                                                                                                                                                                                                                                                                            
     }
+
+    console.log("items", cartItems);
+    // console.log("items", items[5]?.card?.info?.id);
+    for (let index = 0; index < items.length; index++) {
+        const itemId = items[index]?.card?.info?.id;
+        console.log(itemId);
+        setItemsID(itemId);        
+    }
+
+    // const handleDeleteItem = (itemsID) => {
+    //     setCartItem(cartItem)
+    // }
+
 
     const handleClearcart = () => {
         dispatch(clearCart())
