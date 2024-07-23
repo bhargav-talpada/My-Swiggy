@@ -19,7 +19,7 @@ const ItemList = ({items}) => {
         dispatch(addItem(item))                                                                                                                                                                                                                                                                            
     }
 
-    console.log("items", cartItems); 
+    // console.log("items", cartItems); 
 
     // useEffect(() => {
     //     console.log(cartItems.length);
@@ -46,9 +46,9 @@ const ItemList = ({items}) => {
                     </div>
                     <div className=" mb-10">
                         <div className="absolute">
-                            <button onClick={() => handleAddItem(item)} className="mx-7 my-32 px-10 rounded-md p-2 text-green-500 text-xl bg-white shadow-2xl duration-500 hover:bg-gray-200 m-auto">Add</button>
+                            <button onClick={() => handleAddItem(item)} className={item.card.info.imageId ? "mx-7 my-32 px-10 rounded-md p-2 text-green-500 text-xl bg-white shadow-2xl duration-500 hover:bg-gray-200 m-auto" : "mx-[-130px] my-30 px-10 rounded-md p-2 text-green-500 text-xl bg-white shadow-2xl duration-500 hover:bg-gray-200 m-auto"}>Add</button>
                         </div>
-                        <img src={REST_IMG_URL + item.card.info.imageId} className="w-40 h-36 rounded-xl" alt="Customizable" />
+                        {item.card.info.imageId && <img src={REST_IMG_URL + item.card.info.imageId} className="w-40 h-36 rounded-xl" alt="Customizable" />}
                     </div>
                     {/* { cartItems.length != 0 && <MdDelete className="mt-52 text-xl text-red-600 cursor-pointer" onClick={handleClearcart} />} */}
                 </div>
