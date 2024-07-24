@@ -1,6 +1,6 @@
 import Shimmer from '../components/ShimmerUI'
 import useResturentMenu from '../hooks/useResturentMenu';
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { MdStars } from "react-icons/md";
 import RestaurantCategory from './RestaurantCategory';
 import { IoIosBicycle } from "react-icons/io";
@@ -31,7 +31,8 @@ const ResturentMenu = () => {
     return(
         <div className="menu w-full flex justify-center pt-[90px]">
             <div className='w-6/12'>
-                <h1 className='font-bold text-4xl ml-4 mt-5 '>{name}</h1>
+                <h1 className='text-[#535665] pt-5 text-xs'><Link to="/" className='text-[#5b5c63] font-normal'>Home</Link> <span className='text-[#5b5c63] font-normal'>/</span> {name}</h1>
+                <h1 className='font-bold text-3xl ml-4 pt-10'>{name}</h1>
                 <div className=' h-60 p-4 bg-gradient-to-t from-gray-300 rounded-[30px]'>
                     <div className='w-12/12 h-52 py-2 px-4 border-2 rounded-2xl bg-white '>
                         <h3 className='text-xl flex items-center font-semibold'> <MdStars className='text-green-600 mr-1' /> {avgRating} ({totalRatingsString}) • {costForTwoMessage}</h3>
@@ -62,7 +63,10 @@ const ResturentMenu = () => {
                     </div>
                 </div> */}
                 {/* Categories accordians */}
-                <div className='mt-12'>
+                <div className='flex justify-center items-center pt-10'>
+                    <h1 className='text-[#02060c99] tracking-[4px]'>MENU</h1>
+                </div>
+                <div className=''>
                     {
                         categories.map((category) => 
                             <RestaurantCategory 
