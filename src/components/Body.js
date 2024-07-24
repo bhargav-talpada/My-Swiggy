@@ -176,7 +176,7 @@ const Body = () => {
             <div className="">
               <h1 className="text-3xl">{onlineFoodTitle}</h1>
             </div>
-            <div className="grid grid-cols-4" >
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4" >
               { 
                 onlineFoodData.map((resturent) => 
                   <Link to={"/restaurents/" + resturent.info.id} key={resturent.info.id} >  
@@ -206,7 +206,7 @@ const Body = () => {
             <div className="flex justify-between items-center">
               <h1 className="text-3xl">{bestPlaceEatTitle}</h1>
             </div>
-            <div className="grid grid-cols-4 ">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
               { 
                 showAll 
                 ?
@@ -243,7 +243,7 @@ const Body = () => {
             <div className="flex justify-between items-center">
               <h1 className="text-3xl">{bestCuisinesTitle}</h1>
             </div>
-            <div className=" grid grid-cols-4 ">
+            <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 ">
               { 
                 showAllCuisines 
                 ?
@@ -279,7 +279,7 @@ const Body = () => {
             <div className="flex justify-between items-center">
               <h1 className="text-3xl">{resturentNearMeTitle}</h1>
             </div>
-            <div className="flex gap-3">
+            <div className="flex flex-col lg:flex-row gap-3">
               { 
                 resturentNearMe.map((resturent, index) => 
                   <Link key={index} >  
@@ -297,11 +297,11 @@ const Body = () => {
 
         {/* For better experience,download the Swiggy app now */}
 
-        <div className="w-full h-32 flex justify-center items-center gap-20 bg-[#eeeef2] mt-28">
+        <div className="w-full h-56 lg:h-32 flex flex-col lg:flex-row justify-center items-center gap-20 bg-[#eeeef2] mt-28">
             <div className="flex justify-between items-center">
-              <h1 className="text-4xl w-[500px] text-[#02060cbf] font-bold">{downloadAppNowTitle}</h1>
+              <h1 className="text-2xl md:text-4xl w-[500px] text-[#02060cbf] font-bold">{downloadAppNowTitle}</h1>
             </div>
-            <div className="flex justify-center items-center gap-7">
+            <div className="flex  justify-center items-center gap-7">
               <Link to={downloadAppNow.androidAppLink}>
                 <img src={REST_IMG_URL + downloadAppNow.androidAppImage} className="w-auto h-20" />
               </Link>
