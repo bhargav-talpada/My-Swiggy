@@ -119,12 +119,12 @@
         <hr />
         {
           showAllCities &&
-          <div className="w-screen px-44 pt-4 flex flex-col">
-            <h1 className="w-screen text-[#ffffffeb] text-2xl font-black">Other cities that we deliver:</h1>
-              <div className="mt-6 flex flex-wrap">
+          <div className="w-screen px-16 md:px-44 pt-4 flex flex-col">
+            <h1 className="w-screen text-[#ffffffeb] text-xl md:text-2xl font-black">Other cities that we deliver:</h1>
+              <div className="w-full mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
                 {
                   footerCityData.slice(6,595).map((cities, index) =>
-                    <div className="grid grid-cols-1 md:w-1/4"  key={index}>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:w-1/4"  key={index}>
                       <FooterCityData citiesData={cities}  />
                     </div>
                   )

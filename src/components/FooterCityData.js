@@ -6,7 +6,7 @@ const FooterCityData = ({citiesData}) => {
 
   return (
     <div>
-        <h1 className="text-[#ffffff99] text-xl font-semibold my-2 cursor-pointer">{text}</h1>
+        <h1 className="text-[#ffffff99] p-2 md:p-0 text-lg md:text-xl font-semibold cursor-pointer">{text}</h1>
     </div>
   )
 }
