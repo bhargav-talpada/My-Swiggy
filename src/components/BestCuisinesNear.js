@@ -18,8 +18,8 @@ const BestCuisinesNear = ({resData}) => {
     };
 
   return (
-    <div className="mt-8 p-3 w-[275px] border-2 rounded-xl">
-        <h1 className="text-center text-lg font-semibold">{truncatedText}</h1>
+    <div className="mt-8 p-3 w-60 md:w-[275px] border-2 rounded-xl">
+        <h1 className="text-center text-base md:text-lg font-semibold">{truncatedText}</h1>
     </div>
   )
 }

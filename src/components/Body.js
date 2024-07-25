@@ -99,10 +99,10 @@ const Body = () => {
 
     //Conditional Rendering
     return resturentList.length === 0 ? <Shimmer /> : (
-      <div className="flex flex-col justify-center items-center pt-[90px]">
+      <div className="flex flex-col justify-center items-center pt-16 md:pt-[90px]">
         <div className="body w-9/12">
-          <div className="filter flex justify-between items-center">
-            <div className="search m-2 p-3">
+          <div className="filter flex flex-col md:flex-row justify-center md:justify-between items-center p-2 md:p-0">
+            <div className="search m-0 md:m-2 p-3">
               <input type="text" data-testid="searchInput" className="searchinp p-2 border border-solid border-black " placeholder="Search..." value={searchText} onChange={(e)=>{setSearchText(e.target.value)}}/>
               <button className="searchbtn border border-green-300 rounded-md px-5 py-2 bg-green-200 m-4 cursor-pointer" onClick={()=>{
                 const searchRestro = resturentList.filter(res => res.info.name.toLowerCase().includes(searchText.toLowerCase()));
@@ -122,8 +122,8 @@ const Body = () => {
           {/* What's on your mind */}
             
           <div className="">
-            <div className="flex justify-between items-center">
-              <h1 className="text-3xl">{onYourMindTitle}</h1>
+            <div className="flex flex-col sm:flex-row justify-center md:justify-between items-center">
+              <h1 className="text-2xl md:text-3xl">{onYourMindTitle}</h1>
               <div className="flex justify-center text-3xl mr-3">
                 <BsArrowLeftCircleFill onClick={() => mindScroll(-300)} className="text-gray-500 transition-all duration-700 hover:scale-125 cursor-pointer"/>
                 <BsArrowRightCircleFill onClick={() => mindScroll(300)} className="ml-4 text-gray-500 transition-all duration-700 hover:scale-125 cursor-pointer" />
@@ -148,8 +148,8 @@ const Body = () => {
           {/* Top Chains Restaurent Cards */}
 
           <div className="">
-            <div className="flex justify-between items-center">
-              <h1 className="text-3xl">{resRowHeader}</h1>
+            <div className="flex flex-col sm:flex-row justify-center md:justify-between items-center">
+              <h1 className="text-2xl md:text-3xl">{resRowHeader}</h1>
               <div className="flex justify-center text-3xl mr-3">
                 <BsArrowLeftCircleFill onClick={() => scroll(-500)} className="text-gray-500 transition-all duration-700 hover:scale-125 cursor-pointer"/>
                 <BsArrowRightCircleFill onClick={() => scroll(500)} className="ml-4 text-gray-500 transition-all duration-700 hover:scale-125 cursor-pointer" />
@@ -174,7 +174,7 @@ const Body = () => {
 
           <div className="">
             <div className="">
-              <h1 className="text-3xl">{onlineFoodTitle}</h1>
+              <h1 className="text-2xl md:text-3xl">{onlineFoodTitle}</h1>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4" >
               { 
@@ -204,7 +204,7 @@ const Body = () => {
 
           <div className="mt-16">
             <div className="flex justify-between items-center">
-              <h1 className="text-3xl">{bestPlaceEatTitle}</h1>
+              <h1 className="text-2xl md:text-3xl">{bestPlaceEatTitle}</h1>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
               { 
@@ -241,7 +241,7 @@ const Body = () => {
 
           <div className="mt-16">
             <div className="flex justify-between items-center">
-              <h1 className="text-3xl">{bestCuisinesTitle}</h1>
+              <h1 className="text-2xl md:text-3xl">{bestCuisinesTitle}</h1>
             </div>
             <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 ">
               { 
@@ -277,7 +277,7 @@ const Body = () => {
 
           <div className="mt-16">
             <div className="flex justify-between items-center">
-              <h1 className="text-3xl">{resturentNearMeTitle}</h1>
+              <h1 className="text-2xl md:text-3xl">{resturentNearMeTitle}</h1>
             </div>
             <div className="flex flex-col lg:flex-row gap-3">
               { 
@@ -299,7 +299,7 @@ const Body = () => {
 
         <div className="w-full h-56 lg:h-32 flex flex-col lg:flex-row justify-center items-center gap-20 bg-[#eeeef2] mt-28">
             <div className="flex justify-between items-center">
-              <h1 className="text-2xl md:text-4xl w-[500px] text-[#02060cbf] font-bold">{downloadAppNowTitle}</h1>
+              <h1 className="text-xl sm:text-2xl md:text-4xl md:w-[500px] text-[#02060cbf] font-bold">{downloadAppNowTitle}</h1>
             </div>
             <div className="flex  justify-center items-center gap-7">
               <Link to={downloadAppNow.androidAppLink}>
