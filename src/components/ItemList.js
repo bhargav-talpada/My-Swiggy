@@ -34,15 +34,15 @@ const ItemList = ({items}) => {
     return(
         <div className="">
             {items.map((item) => 
-                <div data-testid="foodItems" key={item.card.info.id} className="flex justify-between items-center p-2 m-1 border-b-2 border-gray-300" >
-                    <div className="flex flex-col text-left w-[450px]">
+                <div data-testid="foodItems" key={item.card.info.id} className="flex flex-col sm:flex-row justify-between items-center p-2 m-1 border-b-2 border-gray-300" >
+                    <div className="flex flex-col text-left w-full sm:w-[450px]">
                         <div className="flex flex-col py-2">
-                            <span className="my-2">{item.card.info.itemAttribute.vegClassifier == "VEG" ? <FaStopCircle className="text-green-500 text-xl" /> : <FaStopCircle className="text-red-500 text-xl" />}</span>
-                            <span className="text-xl">{item.card.info.name}</span>
-                            <span className="text-xl">₹{item.card.info.price / 100 || item.card.info.defaultPrice / 100}</span>
-                            <span className="flex items-center font-semibold"><MdStars className="text-green-400 mr-1 text-2xl" />{item.card.info.ratings.aggregatedRating.rating} ({item.card.info.ratings.aggregatedRating.ratingCountV2})</span>
+                            <span className="my-2">{item.card.info.itemAttribute.vegClassifier == "VEG" ? <FaStopCircle className="text-green-500 text-lg sm:text-xl" /> : <FaStopCircle className="text-red-500 text-lg sm:text-xl" />}</span>
+                            <span className="text-base sm:text-xl">{item.card.info.name}</span>
+                            <span className="text-base sm:text-xl">₹{item.card.info.price / 100 || item.card.info.defaultPrice / 100}</span>
+                            <span className="flex items-center font-semibold"><MdStars className="text-green-400 mr-1 text-xl sm:text-2xl" />{item.card.info.ratings.aggregatedRating.rating} ({item.card.info.ratings.aggregatedRating.ratingCountV2})</span>
                         </div>
-                        <p className=" text-gray-500 mb-10 font-semibold">{item.card.info.description}</p>
+                        {item.card.info.description && <p className=" text-gray-500 mb-10 font-semibold">{item.card.info.description}</p>}
                     </div>
                     <div className=" mb-10">
                         <div className="absolute">

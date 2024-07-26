@@ -30,19 +30,19 @@ const ResturentMenu = () => {
     
     return(
         <div className="menu w-full flex justify-center pt-[90px]">
-            <div className='w-6/12'>
+            <div className='w-11/12 sm:w-10/12 md:w-9/12 lg:w-6/12'>
                 <h1 className='text-[#535665] pt-5 text-xs'><Link to="/" className='text-[#5b5c63] font-normal'>Home</Link> <span className='text-[#5b5c63] font-normal'>/</span> {name}</h1>
                 <h1 className='font-bold text-3xl ml-4 pt-10'>{name}</h1>
-                <div className=' h-60 p-4 bg-gradient-to-t from-gray-300 rounded-[30px]'>
-                    <div className='w-12/12 h-52 py-2 px-4 border-2 rounded-2xl bg-white '>
-                        <h3 className='text-xl flex items-center font-semibold'> <MdStars className='text-green-600 mr-1' /> {avgRating} ({totalRatingsString}) • {costForTwoMessage}</h3>
+                <div className='h-[265px] sm:h-60 p-4 bg-gradient-to-t from-gray-300 rounded-[30px]'>
+                    <div className='w-12/12 h-[235px] sm:h-52 py-2 px-4 border-2 rounded-2xl bg-white '>
+                        <h3 className='text-lg sm:text-xl flex items-center font-semibold'> <MdStars className='text-green-600 mr-1' /> {avgRating} ({totalRatingsString}) • {costForTwoMessage}</h3>
                         <p className='text-base text-red-500 ml-1 font-semibold'>{cuisines.join(", ")}</p> 
                         <div className='pl-5 mt-2'>
-                            <p className='text-lg font-semibold'>Outlet<span className=' text-gray-400 ml-4 font-semibold'>{areaName}</span></p>
-                            <p className='text-lg font-semibold'>{slaString}</p>
+                            <p className='text-base sm:text-lg font-semibold'>Outlet<span className=' text-gray-400 ml-4 font-semibold'>{areaName}</span></p>
+                            <p className='text-base sm:text-lg font-semibold'>{slaString}</p>
                         </div>
                         <hr className='my-4' />
-                        <p className='text-lg font-semibold mr-4 flex items-center'> <IoIosBicycle className='mr-2' /> {message}</p>
+                        <p className='text-base sm:text-lg font-semibold mr-4 flex items-center'> <IoIosBicycle className='mr-2' /> {message}</p>
                     </div>
                 </div>
                 {/* Deals For you section */}
@@ -66,7 +66,7 @@ const ResturentMenu = () => {
                 <div className='flex justify-center items-center pt-10'>
                     <h1 className='text-[#02060c99] tracking-[4px]'>MENU</h1>
                 </div>
-                <div className=''>
+                <div className='w-full'>
                     {
                         categories.map((category) => 
                             <RestaurantCategory 
