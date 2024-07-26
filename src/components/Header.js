@@ -27,9 +27,10 @@ export const Header = () => {
 
     return(
         <div>
+
             <div className="hidden fixed w-full bg-white md:flex justify-evenly items-center shadow-md m-0">
                 <div className="">
-                    <a href="/"><img className="logo w-10" src={LOGO_URL} /></a>
+                    <a href="/"><img className="w-10" src={LOGO_URL} /></a>
                 </div>
                 <div className="flex gap-3">
                     <h1 className="text-gray-700 border-b-2 border-gray-700 hover:text-orange-600 hover:border-orange-600  cursor-pointer font-bold text-xl">Other</h1>
@@ -47,13 +48,14 @@ export const Header = () => {
                     </ul>
                 </div>
             </div>
-            <div className="fixed w-full bg-white flex md:hidden justify-evenly items-center shadow-md m-0">
+            {/* Mobile View */}
+            <div className="fixed w-full bg-white flex md:hidden justify-evenly items-center shadow-md m-0 p-2">
                 <div className="">
-                    <a href="/"><img className="logo w-10" src={LOGO_URL} /></a>
+                    <a href="/"><img className="w-7" src={LOGO_URL} /></a>
                 </div>
                 <div className="flex gap-3">
-                    <h1 className="text-gray-700 border-b-2 border-gray-700 hover:text-orange-600 hover:border-orange-600  cursor-pointer font-bold text-xl">Other</h1>
-                    <h1 className="text-gray-500 font-semibold text-xl cursor-pointer">Rajkot, Gujarat</h1>
+                    <h1 className="text-gray-700 border-b-2 border-gray-700 hover:text-orange-600 hover:border-orange-600  cursor-pointer font-bold text-base">Other</h1>
+                    <h1 className="text-gray-500 font-semibold text-base cursor-pointer">Rajkot, Gujarat</h1>
                 </div>
                         <li className="px-4 list-none"> {onlineStatus ? "🟢" : "🔴"} </li>
                 <div className="nav-items">
