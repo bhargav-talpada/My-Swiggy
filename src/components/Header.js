@@ -40,9 +40,9 @@ export const Header = () => {
                     <ul className="flex justify-center items-center p-4 m-4">
                         <li className="px-4"> {onlineStatus ? "🟢" : "🔴"} </li>
                         <li className="px-6 text-xl cursor-pointer flex items-center gap-2 hover:text-orange-600"><RiHome6Line /><Link to="/">Home</Link></li>
-                        <li className="px-6 text-xl cursor-pointer flex items-center gap-2 hover:text-orange-600"><CgToolbox /><Link  to="/about">Swiggy Corporate</Link></li>
-                        <li className="px-6 text-xl cursor-pointer flex items-center gap-2 hover:text-orange-600"><RiDiscountPercentLine /><Link>Offers</Link></li>
-                        <li className="px-6 text-xl cursor-pointer flex items-center gap-2 hover:text-orange-600"><IoHelpBuoyOutline /><Link to="/contact">Help<sup className="text-orange-600 ml-1">NEW</sup></Link></li>
+                        <li className="px-6 text-xl cursor-pointer flex items-center gap-2 hover:text-orange-600"><CgToolbox /><Link  to="/">Swiggy Corporate</Link></li>
+                        <li className="px-6 text-xl cursor-pointer flex items-center gap-2 hover:text-orange-600"><RiDiscountPercentLine /><Link to="/">Offers</Link></li>
+                        <li className="px-6 text-xl cursor-pointer flex items-center gap-2 hover:text-orange-600"><IoHelpBuoyOutline /><Link to="/">Help<sup className="text-orange-600 ml-1">NEW</sup></Link></li>
                         <button onClick={()=>{btnName === 'Sign In' ? setBtnName("Sign Out") : setBtnName("Sign In")}} className="px-6 text-xl hover:text-orange-600 cursor-pointer flex gap-2 items-center"><CiUser />{btnName}</button>
                         <li className="px-6 text-xl cursor-pointer flex items-center gap-2 hover:text-orange-600"><FaOpencart className="text-2xl" /><Link to="/cart">Cart ({cartItems.length})</Link></li>
                     </ul>
@@ -63,9 +63,9 @@ export const Header = () => {
                     { isHeader &&    
                     <ul className="absolute left-0 w-full gap-2 flex flex-col justify-center items-center p-4 m-4 bg-white transition-all mt-5">
                         <li className="px-6 text-xl cursor-pointer flex items-center gap-2 hover:text-orange-600"><RiHome6Line /><Link to="/">Home</Link></li>
-                        <li className="px-6 text-xl cursor-pointer flex items-center gap-2 hover:text-orange-600"><CgToolbox /><Link  to="/about">Swiggy Corporate</Link></li>
-                        <li className="px-6 text-xl cursor-pointer flex items-center gap-2 hover:text-orange-600"><RiDiscountPercentLine /><Link>Offers</Link></li>
-                        <li className="px-6 text-xl cursor-pointer flex items-center gap-2 hover:text-orange-600"><IoHelpBuoyOutline /><Link to="/contact">Help<sup className="text-orange-600 ml-1">NEW</sup></Link></li>
+                        <li className="px-6 text-xl cursor-pointer flex items-center gap-2 hover:text-orange-600"><CgToolbox /><Link  to="/">Swiggy Corporate</Link></li>
+                        <li className="px-6 text-xl cursor-pointer flex items-center gap-2 hover:text-orange-600"><RiDiscountPercentLine /><Link to="/">Offers</Link></li>
+                        <li className="px-6 text-xl cursor-pointer flex items-center gap-2 hover:text-orange-600"><IoHelpBuoyOutline /><Link to="/">Help<sup className="text-orange-600 ml-1">NEW</sup></Link></li>
                         <button onClick={()=>{btnName === 'Sign In' ? setBtnName("Sign Out") : setBtnName("Sign In")}} className="px-6 text-xl hover:text-orange-600 cursor-pointer flex gap-2 items-center"><CiUser />{btnName}</button>
                         <li className="px-6 text-xl cursor-pointer flex items-center gap-2 hover:text-orange-600"><FaOpencart className="text-2xl" /><Link to="/cart">Cart ({cartItems.length})</Link></li>
                     </ul>
