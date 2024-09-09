@@ -2,6 +2,7 @@
   "name": "ep---13",
   "version": "1.0.0",
   "description": "This is a Namaste React Episode Number 13",
+  "main": "App.js",
   "scripts": {
     "start": "parcel index.html",
     "build": "react-scripts build",
