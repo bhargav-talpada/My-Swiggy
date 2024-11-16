@@ -16,13 +16,13 @@
 🛠️ Tech Stack  <br>
 
 • Frontend:  <br>
-⚛️ ReactJS  <br>
-🌟 Tailwind CSS  <br>
-🖌️ JavaScript  <br>
+- ⚛️ ReactJS  <br>
+- 🌟 Tailwind CSS  <br>
+- 🖌️ JavaScript  <br>
 
 • Backend (API):  <br>
-🔗 Swiggy Live API  <br>
+- 🔗 Swiggy Live API  <br>
 
 Development Tools:  <br>
-•🧰 Visual Studio Code  <br>
-• 🌐 Chrome DevTools  <br>
+- 🧰 Visual Studio Code  <br>
+- 🌐 Chrome DevTools  <br>
