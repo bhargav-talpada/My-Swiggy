@@ -1,9 +1,8 @@
 const Shimmer = () => {
     return(
-        <div className="m-4 p-4">
+        <div className="m-4 p-4 pt-32">
             <div className="shimmer-filter">
                 <input type="text" className="shimmer-input p-2 border border-solid border-black" />
-                
                 <button className="shimmer-btn-filter border border-green-300 rounded-md px-5 py-2 bg-green-200 m-4 cursor-pointer"></button>
             </div>
             <div className="shimmer-container grid grid-cols-6">

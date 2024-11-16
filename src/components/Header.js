@@ -26,9 +26,9 @@ export const Header = () => {
     const cartItems = useSelector((store) => store.cart.items)
 
     return(
-        <div>
+        <div className="hidden fixed w-full bg-white  md:flex justify-evenly items-center shadow-md m-0 z-50">
 
-            <div className="hidden fixed w-full bg-white md:flex justify-evenly items-center shadow-md m-0">
+            <div className="w-11/12 flex justify-evenly items-center">
                 <div className="">
                     <a href="/"><img className="w-10" src={LOGO_URL} /></a>
                 </div>
@@ -36,13 +36,11 @@ export const Header = () => {
                     <h1 className="text-gray-700 border-b-2 border-gray-700 hover:text-orange-600 hover:border-orange-600  cursor-pointer font-bold text-xl">Other</h1>
                     <h1 className="text-gray-500 font-semibold text-xl cursor-pointer">Rajkot, Gujarat</h1>
                 </div>
-                <div className="nav-items">
+                <div className="nav-items pr-0">
                     <ul className="flex justify-center items-center p-4 m-4">
                         <li className="px-4"> {onlineStatus ? "🟢" : "🔴"} </li>
                         <li className="px-6 text-xl cursor-pointer flex items-center gap-2 hover:text-orange-600"><RiHome6Line /><Link to="/">Home</Link></li>
                         <li className="px-6 text-xl cursor-pointer flex items-center gap-2 hover:text-orange-600"><CgToolbox /><Link  to="/">Swiggy Corporate</Link></li>
-                        <li className="px-6 text-xl cursor-pointer flex items-center gap-2 hover:text-orange-600"><RiDiscountPercentLine /><Link to="/">Offers</Link></li>
-                        <li className="px-6 text-xl cursor-pointer flex items-center gap-2 hover:text-orange-600"><IoHelpBuoyOutline /><Link to="/">Help<sup className="text-orange-600 ml-1">NEW</sup></Link></li>
                         <button onClick={()=>{btnName === 'Sign In' ? setBtnName("Sign Out") : setBtnName("Sign In")}} className="px-6 text-xl hover:text-orange-600 cursor-pointer flex gap-2 items-center"><CiUser />{btnName}</button>
                         <li className="px-6 text-xl cursor-pointer flex items-center gap-2 hover:text-orange-600"><FaOpencart className="text-2xl" /><Link to="/cart">Cart ({cartItems.length})</Link></li>
                     </ul>

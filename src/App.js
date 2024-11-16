@@ -1,63 +1,83 @@
-import React, { useEffect, useState } from "react";
-import ReactDOM from "react-dom/client";
-import {Header} from "./components/Header";
-import Body from "./components/Body";
-import {createBrowserRouter, Outlet, RouterProvider} from 'react-router-dom'
-import About from "./components/About";
-import Contact from "./components/Contact";
-import PageNotFound from "./components/PageNotFound";
-import ResturentMenu from "./components/ResturentMenu";
-import { Provider } from "react-redux";
-import appStore from "./redux/appStore";
-import Cart from "./components/Cart";
-import OnYourMindMenuInfo from "./components/OnYourMindMenuInfo";
+// import React, { useEffect, useState } from "react";
+// import ReactDOM from "react-dom/client";
+// import {Header} from "./components/Header";
+// import Body from "./components/Body";
+// import {createBrowserRouter, Outlet, RouterProvider} from 'react-router-dom'
+// import About from "./components/About";
+// import Contact from "./components/Contact";
+// import PageNotFound from "./components/PageNotFound";
+// import ResturentMenu from "./components/ResturentMenu";
+// import { Provider } from "react-redux";
+// import appStore from "./redux/appStore";
+// import Cart from "./components/Cart";
+// import OnYourMindMenuInfo from "./components/OnYourMindMenuInfo";
 
+
+// const App = () => {
+
+//     return(
+//         <Provider store={appStore}>
+//                 <div>
+//                     <Header />
+//                     <Outlet />
+//                 </div>
+//         </Provider>
+//     )
+// }
+
+// const appRouter = createBrowserRouter([
+//     {
+//         path: '/',
+//         element: <App />,
+//         children: [
+//             {
+//                 path: '/',
+//                 element: <Body />
+//             },
+//             {
+//                 path: '/',
+//                 element: <About />
+//             },
+//             {
+//                 path: '/',
+//                 element: <Contact />,
+//             },
+//             {
+//                 path: '/restaurents/:resId',
+//                 element: <ResturentMenu />
+//             },
+//             {
+//                 path: "/collections/:mindId",
+//                 element: <OnYourMindMenuInfo />
+//             },
+//             {
+//                 path: '/cart',
+//                 element: <Cart />
+//             },
+//         ],
+//         errorElement: <PageNotFound />,
+//     },
+// ])
+
+// const root = ReactDOM.createRoot(document.getElementById('root'))
+// root.render(<RouterProvider router={appRouter}/>)
+
+// App.js
+import React from "react";
+import { Outlet } from "react-router-dom";
+import { Provider } from "react-redux";
+import Header from "./components/Header";
+import appStore from "./redux/appStore";
 
 const App = () => {
+  return (
+    <Provider store={appStore}>
+      <div>
+        <Header />
+        <Outlet />
+      </div>
+    </Provider>
+  );
+};
 
-    return(
-        <Provider store={appStore}>
-                <div>
-                    <Header />
-                    <Outlet />
-                </div>
-        </Provider>
-    )
-}
-
-const appRouter = createBrowserRouter([
-    {
-        path: '/',
-        element: <App />,
-        children: [
-            {
-                path: '/',
-                element: <Body />
-            },
-            {
-                path: '/',
-                element: <About />
-            },
-            {
-                path: '/',
-                element: <Contact />,
-            },
-            {
-                path: '/restaurents/:resId',
-                element: <ResturentMenu />
-            },
-            {
-                path: "/collections/:mindId",
-                element: <OnYourMindMenuInfo />
-            },
-            {
-                path: '/cart',
-                element: <Cart />
-            },
-        ],
-        errorElement: <PageNotFound />,
-    },
-])
-
-const root = ReactDOM.createRoot(document.getElementById('root'))
-root.render(<RouterProvider router={appRouter}/>)
+export default App;

@@ -6,6 +6,7 @@ import RestaurantCategory from './RestaurantCategory';
 import { IoIosBicycle } from "react-icons/io";
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from 'react-icons/bs';
 import DealsForYou from './DealsForYou';
+import ResturentMenuSimmer from './ResturentMenuSimmer';
 
 const ResturentMenu = () => {
 
@@ -13,7 +14,7 @@ const ResturentMenu = () => {
 
     const resInfo = useResturentMenu(resId);
 
-    if(resInfo === null) return <Shimmer />
+    if(resInfo === null) return <ResturentMenuSimmer />
 
     const { name, costForTwoMessage, cuisines, areaName, avgRating, totalRatingsString, sla, feeDetails } = resInfo?.cards[2]?.card?.card?.info;
     const { slaString } = sla;
