@@ -1,9 +1,9 @@
 ## 🍔 My-Swiggy Clone
 
-📝 Project Description
+📝 Project Description <br>
 The My-Swiggy Clone is a web application that replicates the functionality of Swiggy, a popular food ordering and delivery platform. It integrates Swiggy's Live API to fetch real-time data, providing users with a seamless experience for browsing restaurants, viewing menus, and placing orders. The project emphasizes a responsive design and interactive UI using ReactJS and Tailwind CSS.
 
-🚀 Features
+🚀 Features <br>
 🛒 Real-time Restaurant Listings: Fetch data directly from Swiggy's API.
 🍽️ Menu Details: Explore menus with dynamic data updates.
 📱 Responsive Design: Optimized for all devices, ensuring a user-friendly experience.
