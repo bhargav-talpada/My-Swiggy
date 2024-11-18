@@ -1,11 +1,8 @@
-import Shimmer from '../components/ShimmerUI'
 import useResturentMenu from '../hooks/useResturentMenu';
 import { Link, useParams } from 'react-router-dom'
 import { MdStars } from "react-icons/md";
 import RestaurantCategory from './RestaurantCategory';
 import { IoIosBicycle } from "react-icons/io";
-import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from 'react-icons/bs';
-import DealsForYou from './DealsForYou';
 import ResturentMenuSimmer from './ResturentMenuSimmer';
 
 const ResturentMenu = () => {

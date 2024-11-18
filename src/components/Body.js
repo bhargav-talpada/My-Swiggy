@@ -98,10 +98,10 @@ const Body = () => {
       
 
     //Conditional Rendering
-    return resturentList.length === 0 ? <Shimmer /> : (
+    return (resturentList?.length === 0 || resturentList === undefined) ? <Shimmer /> : (
       <div className="flex flex-col justify-center items-center pt-16 md:pt-[90px]">
         <div className="body w-9/12">
-          <div className="filter flex flex-col md:flex-row justify-center md:justify-between items-center p-2 md:p-0">
+          <div className="flex flex-col md:flex-row justify-center md:justify-between items-center p-2 md:p-0">
             <div className="search m-0 md:m-2 p-3">
               <input type="text" data-testid="searchInput" className="searchinp p-2 border border-solid border-black " placeholder="Search..." value={searchText} onChange={(e)=>{setSearchText(e.target.value)}}/>
               <button className="searchbtn border border-green-300 rounded-md px-5 py-2 bg-green-200 m-4 cursor-pointer" onClick={()=>{
@@ -303,10 +303,10 @@ const Body = () => {
             </div>
             <div className="flex  justify-center items-center gap-7">
               <Link to={downloadAppNow.androidAppLink}>
-                <img src={REST_IMG_URL + downloadAppNow.androidAppImage} className="w-auto h-20" />
+                <img src={REST_IMG_URL + downloadAppNow.androidAppImage} className="w-auto h-20" alt="android" />
               </Link>
               <Link to={downloadAppNow.iosAppLink}>
-                <img src={REST_IMG_URL + downloadAppNow.iosAppImage} className="w-auto h-20" />
+                <img src={REST_IMG_URL + downloadAppNow.iosAppImage} className="w-auto h-20" alt="iphone" />
               </Link>
             </div>
           </div>

@@ -26,11 +26,11 @@ export const Header = () => {
     const cartItems = useSelector((store) => store.cart.items)
 
     return(
-        <div className="hidden fixed w-full bg-white  md:flex justify-evenly items-center shadow-md m-0 z-50">
+        <div className=" w-full bg-white  md:flex justify-evenly items-center shadow-md m-0 z-50">
 
-            <div className="w-11/12 flex justify-evenly items-center">
+            <div className="w-11/12 hidden fixed md:flex justify-evenly items-center">
                 <div className="">
-                    <a href="/"><img className="w-10" src={LOGO_URL} /></a>
+                    <a href="/"><img className="w-10" src={LOGO_URL} alt="swiggy" /></a>
                 </div>
                 <div className="flex gap-3">
                     <h1 className="text-gray-700 border-b-2 border-gray-700 hover:text-orange-600 hover:border-orange-600  cursor-pointer font-bold text-xl">Other</h1>
@@ -49,7 +49,7 @@ export const Header = () => {
             {/* Mobile View */}
             <div className="fixed w-full bg-white flex md:hidden justify-evenly items-center shadow-md m-0 p-2">
                 <div className="">
-                    <a href="/"><img className="w-7" src={LOGO_URL} /></a>
+                    <a href="/"><img className="w-7" src={LOGO_URL} alt="" /></a>
                 </div>
                 <div className="flex gap-3">
                     <h1 className="text-gray-700 border-b-2 border-gray-700 hover:text-orange-600 hover:border-orange-600  cursor-pointer font-bold text-base">Other</h1>
