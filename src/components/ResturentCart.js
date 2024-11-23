@@ -25,7 +25,7 @@ const ResturentCart = (props) =>{
       };
     
     return(
-        <div data-testid="resCard" className="mt-8 w-64 h-[415px]  rounded-md" >
+        <div data-testid="resCard" className="mt-8 w-64 h-[415px]  rounded-md  hover:scale-105 duration-200" >
             <img src={REST_IMG_URL+cloudinaryImageId} className=" cart-img rounded-xl w-full h-44" />
             <h3 className="font-bold mt-3 ml-4 text-xl">{truncatedResTitle}</h3>
             <h4 className="flex items-center ml-4 text-lg"><MdStars className="text-2xl text-green-600 mr-1" /> {avgRating} • {sla.slaString}  </h4>

@@ -26,9 +26,9 @@ export const Header = () => {
     const cartItems = useSelector((store) => store.cart.items)
 
     return(
-        <div className=" w-full bg-white  md:flex justify-evenly items-center shadow-md m-0 z-50">
+        <div className="">
 
-            <div className="w-11/12 hidden fixed md:flex justify-evenly items-center">
+            <div className="w-full hidden fixed md:flex justify-evenly bg-white items-center shadow-lg px-12 z-50">
                 <div className="">
                     <a href="/"><img className="w-10" src={LOGO_URL} alt="swiggy" /></a>
                 </div>

@@ -50,7 +50,7 @@ const Body = () => {
     const fetchData = async () => {
       const data = await fetch(SWIGGY_MAIN_API);
       const json = await data.json();
-      console.log("all data",json);
+      // console.log("all data",json);
 
       //Optional Chaining
       setResturentList(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
