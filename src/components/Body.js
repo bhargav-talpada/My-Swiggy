@@ -48,36 +48,26 @@ const Body = () => {
     // All fetch resturent data
 
     const fetchData = async () => {
-      try {
-        const data = await fetch(SWIGGY_MAIN_API);
-        if (!data.ok) {
-          throw new Error(`HTTP error! status: ${data.status}`)
-        }
-        if (!data.headers.get('Content-Type').includes('application/json')) {
-          throw new Error('Response is not JSON');
-        }
-        const json = await data.json();
-        // console.log("all data",json);
-  
-        //Optional Chaining
-        setResturentList(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-        setFilterdResturent(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-        setResRowHeader(json?.data?.cards[1]?.card?.card?.header?.title);
-        setOnYourMindTitle(json?.data?.cards[0]?.card?.card?.header?.title);
-        setWhatOnYourMindData(json?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle?.info);
-        setOnlineFoodTitle(json?.data?.cards[2]?.card?.card?.title);
-        setOnlineFoodData(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-        SetBestPlaceEatCities(json?.data?.cards[6]?.card?.card?.brands);
-        setBestPlaceEatTitle(json?.data?.cards[6]?.card?.card?.title)
-        setBestCuisinesNearMe(json?.data?.cards[7]?.card?.card?.brands);
-        setBestCuisinesTitle(json?.data?.cards[7]?.card?.card?.title)
-        setResturentNearMe(json?.data?.cards[8]?.card?.card?.brands);
-        setResturentNearMeTitle(json?.data?.cards[8]?.card?.card?.title);
-        setDownloadAppNowTitle(json?.data?.cards[9]?.card?.card?.title);
-        setDownloadAppNow(json?.data?.cards[9]?.card?.card);
-      } catch (error) {
-        console.log('Error fetching data:', error)
-      }
+      const data = await fetch(SWIGGY_MAIN_API);
+      const json = await data.json();
+      // console.log("all data",json);
+
+      //Optional Chaining
+      setResturentList(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+      setFilterdResturent(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+      setResRowHeader(json?.data?.cards[1]?.card?.card?.header?.title);
+      setOnYourMindTitle(json?.data?.cards[0]?.card?.card?.header?.title);
+      setWhatOnYourMindData(json?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle?.info);
+      setOnlineFoodTitle(json?.data?.cards[2]?.card?.card?.title);
+      setOnlineFoodData(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+      SetBestPlaceEatCities(json?.data?.cards[6]?.card?.card?.brands);
+      setBestPlaceEatTitle(json?.data?.cards[6]?.card?.card?.title)
+      setBestCuisinesNearMe(json?.data?.cards[7]?.card?.card?.brands);
+      setBestCuisinesTitle(json?.data?.cards[7]?.card?.card?.title)
+      setResturentNearMe(json?.data?.cards[8]?.card?.card?.brands);
+      setResturentNearMeTitle(json?.data?.cards[8]?.card?.card?.title);
+      setDownloadAppNowTitle(json?.data?.cards[9]?.card?.card?.title);
+      setDownloadAppNow(json?.data?.cards[9]?.card?.card);
 
     };
 
