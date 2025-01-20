@@ -50,7 +50,7 @@ const Body = () => {
     const fetchData = async () => {
       const data = await fetch(SWIGGY_MAIN_API);
       const json = await data.json();
-      // console.log("all data",json);
+      console.log("all data",json);
 
       //Optional Chaining
       setResturentList(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
@@ -168,11 +168,11 @@ const Body = () => {
             </div>
           </div>
 
-          <hr className="mb-8" />
+          <hr className="mt-5" />
 
           {/* Restaurants with online food delivery in Rajkot */}
 
-          <div className="">
+          <div className="mt-10">
             <div className="">
               <h1 className="text-2xl md:text-3xl">{onlineFoodTitle}</h1>
             </div>
@@ -198,11 +198,11 @@ const Body = () => {
             </div>
           </div>
 
-          <hr className="mb-8" />
+          <hr className="mt-5" />
 
           {/* Best Places to Eat Across Cities */}
 
-          <div className="mt-16">
+          <div className="mt-10">
             <div className="flex justify-between items-center">
               <h1 className="text-2xl md:text-3xl">{bestPlaceEatTitle}</h1>
             </div>
@@ -239,7 +239,7 @@ const Body = () => {
 
           {/* Best Cuisines Near Me */}
 
-          <div className="mt-16">
+          <div className="mt-10">
             <div className="flex justify-between items-center">
               <h1 className="text-2xl md:text-3xl">{bestCuisinesTitle}</h1>
             </div>
@@ -275,7 +275,7 @@ const Body = () => {
 
           {/* Explore Every Restaurants Near Me */}
 
-          <div className="mt-16">
+          <div className="mt-10">
             <div className="flex justify-between items-center">
               <h1 className="text-2xl md:text-3xl">{resturentNearMeTitle}</h1>
             </div>

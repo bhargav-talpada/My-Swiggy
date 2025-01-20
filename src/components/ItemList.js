@@ -2,10 +2,10 @@ import { MdStars } from "react-icons/md";
 import { REST_IMG_URL } from "../utils/constants";
 import { FaStopCircle } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
-import { addItem, clearCart } from "../redux/cartSlice";
+import { addItem, removeItem, clearCart } from "../redux/cartSlice";
 import { MdDelete } from "react-icons/md";
 import { useEffect, useState } from "react";
-
+import { useLocation } from "react-router-dom";
 
 const ItemList = ({items}) => {
 
@@ -19,6 +19,13 @@ const ItemList = ({items}) => {
         dispatch(addItem(item))                                                                                                                                                                                                                                                                            
     }
 
+    const handleRemoveItem = (item) => {
+        dispatch(removeItem(item))                                                                                                                                                                                                                                                                            
+    }
+
+    const location = useLocation();
+    const isCart = location.pathname === '/cart';
+
     // console.log("items", cartItems); 
 
     // useEffect(() => {
@@ -26,10 +33,6 @@ const ItemList = ({items}) => {
     //     setItemsIDs(cartItems.map((itemsid) => itemsid.card.info.id));
     //     console.log("items id",itemsIDs);
     // }, []);
-
-    // const handleClearcart = () => {
-    //     dispatch(clearCart())
-    // }
 
     return(
         <div className="">
@@ -50,9 +53,8 @@ const ItemList = ({items}) => {
                         </div>
                         {item.card.info.imageId && <img src={REST_IMG_URL + item.card.info.imageId} className="w-40 h-36 rounded-xl" alt="Customizable" />}
                     </div>
-                    {/* { cartItems.length != 0 && <MdDelete className="mt-52 text-xl text-red-600 cursor-pointer" onClick={handleClearcart} />} */}
+                    { isCart && cartItems.length != 0 && <MdDelete className="mt-52 text-xl text-red-600 cursor-pointer" onClick={() => handleRemoveItem(item)} />}
                 </div>
-                
             )}
             
         </div>
